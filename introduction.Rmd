@@ -1,0 +1,66 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+The `mcycle` data regard a series of measurements of head acceleration in a simulated motorcycle accident, used to test crash helmets. The observations consist of acceleromter readings taken through time, thus there are only two variables `times`, in milliseconds after impact, and `accel`, measured in g, which can be positive or negative with 0 as a resting state.
+
+```{r load_mcycle}
+library(tidyverse)
+data(mcycle, package = 'MASS')
+
+qplot(data=mcycle, x=times, y=accel)
+```
+
+Now fit a regression model of your choosing (e.g. using `lm` `glm` or your favorite package) and plot your predictions against it.  
+
+```{r model0, eval=FALSE}
+model_start = modelfunc(?, data = mcycle)
+  
+library(modelr)  # install if you don't have
+mcycle = mcycle %>% 
+  add_predictions(model_start, var = 'prediction')
+
+mcycle %>% 
+  ggplot(aes(times, accel)) +
+  geom_point() +
+  geom_line(aes(y=prediction))
+```
+
+Now let's let `ggplot` give us a fit.
+
+```{r geom_smooth}
+mcycle %>% 
+  ggplot(aes(times, accel)) +
+  geom_point() + 
+  geom_smooth(method = 'gam', formula = y ~ s(x)) # the y and x are just generic names for the axes
+```
+
+Pretty good!  Under the hood we've told ggplot to use gam from the mgcv package.  The following shows what this might look like had we done it ourselves.
+
+```{r gam}
+library(mgcv)   # part of base R so you already have it
+
+model_gam = gam(accel ~ s(times), data = mcycle)
+summary(model_gam)
+```
+
+The syntax is pretty easy, which is great!  This means you can more or less jump right in with your current R modeling knowledge.  However, know that there are many more possibilities for us in the future.
+
+The output is confusing, but we'll understand it better later.  For now, we can see that the *smooth* term (i.e. `times`) is statistically notable, so we can feel okay about trying to understand its effects.  So let's visualize some predictions.
+
+
+```{r vis_gam}
+mcycle %>% 
+  add_predictions(model_gam, var = 'gam_predictions') %>% 
+  ggplot(aes(times, accel)) +
+  geom_point() + 
+  geom_line(aes(y = gam_predictions), color = "#b2001d", size = 1.2)
+```
+
+
+This clearly isn't a linear relationship, and it's not straightforward in general.  THAT'S OK! That's just the way nature is.  
+
+In this case, we don't see any change until about 15 ms, at which point gs go sharply negative, followed by a rebound and eventually settling back to the resting state (though with some oscillation).  
