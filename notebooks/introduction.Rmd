@@ -29,7 +29,7 @@ mcycle %>%
   geom_line(aes(y=prediction))
 ```
 
-Now let's let `ggplot` give us a fit.
+Now let's let `ggplot` give us a fit instead.
 
 ```{r geom_smooth}
 mcycle %>% 
@@ -56,11 +56,47 @@ The output is confusing, but we'll understand it better later.  For now, we can 
 mcycle %>% 
   add_predictions(model_gam, var = 'gam_predictions') %>% 
   ggplot(aes(times, accel)) +
-  geom_point() + 
-  geom_line(aes(y = gam_predictions), color = "#b2001d", size = 1.2)
+  geom_point(alpha = .5) + 
+  geom_line(aes(y = gam_predictions), color = "#b2001d", size = 1.2, alpha = .5)
 ```
 
 
 This clearly isn't a linear relationship, and it's not straightforward in general.  THAT'S OK! That's just the way nature is.  
 
 In this case, we don't see any change until about 15 ms, at which point gs go sharply negative, followed by a rebound and eventually settling back to the resting state (though with some oscillation).  
+
+
+```{r multifit_plot}
+attach(mcycle)
+polyfit = fitted(lm(accel ~ poly(times, 3)))
+nsfit   = fitted(lm(accel ~ splines::ns(times, df = 5)))  # splines is part of base R
+ssfit   = fitted(smooth.spline(times, accel))
+lowfit  = lowess(times, accel, .2)$y
+ksfit   = ksmooth(times, accel, 'normal', bandwidth = 5, x.points = times)$y
+gamfit  = fitted(mgcv::gam(accel ~ s(times, bs = "cs")))
+detach('mcycle')
+
+mcycle2 = data.frame(mcycle, polyfit, nsfit, ssfit, lowfit, ksfit, gamfit)
+
+mcycle3 = 
+  mcycle2 %>% 
+  gather(key=variable, value = value, -times, -accel) %>% 
+  mutate(variable = factor(variable, 
+                           labels=c('GAM', 
+                                    'Kernel Smoother', 
+                                    'Lowess', 
+                                    'Natural Splines', 
+                                    'Polynomial Regression (cubic)', 
+                                    'Smoothing Splines'
+                                    )))
+ggplot(aes(x=times,y=accel), data=mcycle3) + 
+  geom_point(color='#ff5500', alpha=.25, size=1) + 
+  geom_line(aes(y=value), color='#00aaff', size=.75) +
+  facet_wrap(~variable) +
+  ylab('Acceleration') +
+  xlab('Time') +
+  theme(plot.background=element_blank()) +
+  theme_minimal()
+
+```
+
