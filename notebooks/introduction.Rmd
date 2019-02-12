@@ -5,6 +5,10 @@ editor_options:
   chunk_output_type: inline
 ---
 
+```{r misc_functions}
+source('misc_functions/functions.R')
+```
+
 The `mcycle` data regard a series of measurements of head acceleration in a simulated motorcycle accident, used to test crash helmets. The observations consist of acceleromter readings taken through time, thus there are only two variables `times`, in milliseconds after impact, and `accel`, measured in g, which can be positive or negative with 0 as a resting state.
 
 ```{r load_mcycle}
@@ -35,7 +39,8 @@ Now let's let `ggplot` give us a fit instead.
 mcycle %>% 
   ggplot(aes(times, accel)) +
   geom_point() + 
-  geom_smooth(method = 'gam', formula = y ~ s(x)) # the y and x are just generic names for the axes
+  geom_smooth(method = 'gam', formula = y ~ s(x)) + # the y and x are just generic names for the axes
+  theme_trueMinimal()
 ```
 
 Pretty good!  Under the hood we've told ggplot to use gam from the mgcv package.  The following shows what this might look like had we done it ourselves.
@@ -57,7 +62,8 @@ mcycle %>%
   add_predictions(model_gam, var = 'gam_predictions') %>% 
   ggplot(aes(times, accel)) +
   geom_point(alpha = .5) + 
-  geom_line(aes(y = gam_predictions), color = "#b2001d", size = 1.2, alpha = .5)
+  geom_line(aes(y = gam_predictions), color = "#b2001d", size = 1.2, alpha = .5) +
+  theme_trueMinimal()
 ```
 
 
@@ -96,7 +102,7 @@ ggplot(aes(x=times,y=accel), data=mcycle3) +
   ylab('Acceleration') +
   xlab('Time') +
   theme(plot.background=element_blank()) +
-  theme_minimal()
+  theme_trueMinimal()
 
 ```
 
