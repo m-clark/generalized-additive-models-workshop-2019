@@ -1,0 +1,47 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r}
+plot_ly(data=d) %>% 
+  add_markers(~x, ~y, marker=list(color='#ff5500', opacity=.1), showlegend=F) %>% 
+  add_lines(~x, ~fits, color=~polynomial, data=fits) %>% 
+  config(displayModeBar=F) %>% 
+  theme_plotly()
+```
+
+## Piecewise polynomial
+
+<span class="newthought">So how might we solve the problem</span> we saw with polynomial regression?  One way would be to divide the data into chunks at various points (<span class='emph'>knots</span>), and fit a linear regression or polynomial model within that subset of data.  The following fits a cubic polynomial for each 10 evenly divided subsets of x.
+
+```{r piecewisePoly, echo=FALSE}
+knots = seq(0, 1, by = .1)
+d$xcut = cut(x, knots, right=F)
+d$xcut = factor(d$xcut, levels=c('Int', levels(d$xcut))) # add int for later
+
+fits = d %>% 
+  group_by(xcut) %>% 
+  do(data.frame(x=.$x, y=.$y, fit=fitted(lm(y~poly(x, 3), data=.))))
+
+
+plot_ly(fits) %>% 
+  add_markers(~x, ~y, marker=list(color='#ff5500', opacity=.5), showlegend=F) %>% 
+  add_lines(~x, ~fit, color=I('#00aaff'), showlegend=F) %>% 
+  config(displayModeBar=F) %>% 
+  theme_plotly()
+```
+
+
+```{r polysplinedemo, echo=FALSE}
+d %>%
+  add_predictions(model = gam(y ~ s(x, bs='cr', k=12))) %>% 
+  arrange(x) %>% 
+  plot_ly() %>% 
+  add_markers(~x, ~y, marker=list(color='#ff5500', opacity=.5), showlegend=F) %>% 
+  add_lines(~x, ~pred, color=I('#00aaff'), showlegend=F) %>% 
+  config(displayModeBar=F) %>% 
+  theme_plotly()
+```
