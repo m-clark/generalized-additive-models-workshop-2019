@@ -1,0 +1,118 @@
+---
+title: "The Case for GAMs"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+
+## Using Standard Methods
+
+```{r simulated_data}
+set.seed(123)
+library(mgcv)
+dat = gamSim(1, n=400, dist="normal", scale=1, verbose=F)
+```
+
+```{r demolm}
+mod = lm(y ~ x1 + x2, data=dat)
+summary(mod)
+```
+```{r diagnostics}
+plot(mod, which = 1:2)
+```
+
+```{r general_fit}
+# requires broom and glue packages
+broom::augment(mod) %>% 
+  ggplot(aes(x=.fitted, y=y)) +
+  geom_point(alpha=.25, color='#ff5500') + 
+  geom_smooth(se=F, color='#00aaff') +
+  annotate('text',
+           label = glue::glue("Rsq = {round(summary(mod)$r.squared, 2)}"),
+           x = 4,
+           y = 16) +
+  labs(title='Fitted vs. Observed') +
+  theme_minimal()
+```
+
+```{r relationships}
+dat %>% 
+  select(x1, x2, y) %>% 
+  gather(key=variable, value=Predictor, -y) %>% 
+  ggplot(aes(x=Predictor, y=y)) +
+  geom_point(alpha=.25, color='#ff5500') + 
+  geom_smooth(aes(), color='#00aaff', se=F) +
+  facet_grid(~variable) + 
+  labs(title='Predictors vs. Y') +
+  theme_minimal() +
+  theme(legend.title=element_blank(),
+        legend.background=element_blank(),
+        legend.key=element_blank())
+```
+
+## Heteroscedasticity, non-normality, etc.
+
+```{r log_no_help}
+modlog = lm(log(y) ~ x1 + x2, dat)
+summary(modlog)
+plot(modlog, which = 1:2)
+
+broom::augment(mod) %>% 
+  ggplot(aes(x=.fitted, y=y)) +
+  geom_point(alpha=.25, color='#ff5500') + 
+  geom_smooth(se=F, color='#00aaff') +
+  annotate('text',
+           label = glue::glue("Rsq = {round(summary(modlog)$r.squared, 2)}"),
+           x = 4,
+           y = 16) +
+  labs(title='Fitted vs. Observed') +
+  theme_minimal()
+```
+
+
+## Polynomial Regression
+
+```{r simData}
+set.seed(123)
+x = runif(500)
+mu = sin(2 * (4 * x - 2)) + 2 * exp(-(16 ^ 2) * ((x - .5) ^ 2))
+y = rnorm(500, mu, .3)
+d = data.frame(x,y) 
+```
+
+
+
+```{r simDataPlot, echo=F}
+library(plotly)  # install if you don't have
+
+fits = sapply(seq(3,15, 3), function(p) fitted(lm(y~poly(x,p)))) %>% 
+  data.frame(x, y, .) %>% 
+  gather(key=polynomial, value=fits, -x, -y) %>% 
+  mutate(polynomial = factor(polynomial, labels=seq(3,15, 3)))
+
+plot_ly(data=d) %>% 
+  add_markers(~x, ~y, marker=list(color='#ff5500', opacity=.2), showlegend=F) %>% 
+  add_lines(~x, ~fits, color=~polynomial, data=fits) %>% 
+  config(displayModeBar=F) %>% 
+  layout(
+    xaxis = list(zeroline=FALSE,
+                 showgrid=FALSE),
+    yaxis = list(zeroline=FALSE,
+                 showgrid=FALSE)
+  )
+```
+
+
+
+#### Polynomial regression is problematic
+
+A standard linear regression is definitely not going to capture this relationship.  As above, we could try and use polynomial regression here, e.g. fitting a quadratic or cubic function within the standard regression framework.  However, this is unrealistic at best and at worst isn't useful for complex relationships. In the following, even with a polynomial of degree 15 the fit is fairly poor in many areas, and 'wiggles' in some places where there doesn't appear to be a need to.
+
+```{r polyreg, echo=FALSE}
+
+
+
+
+```
+
