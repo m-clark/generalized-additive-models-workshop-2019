@@ -1,11 +1,19 @@
 ---
-title: "R Notebook"
+title: "Building up to GAMs"
 output: html_notebook
 editor_options: 
   chunk_output_type: inline
 ---
 
-```{r}
+```{r poly_dont_work}
+# assumes case_for_gams.Rmd has been run and those objects are in your environment
+
+
+fits = map(seq(3, 15, 3), ~ fitted(lm(y ~ poly(x, .)))) %>% 
+  data.frame(x, y, .) %>% 
+  gather(key=polynomial, value=fits, -x, -y) %>% 
+  mutate(polynomial = factor(polynomial, labels = seq(3, 15, 3)))
+
 plot_ly(data=d) %>% 
   add_markers(~x, ~y, marker=list(color='#ff5500', opacity=.1), showlegend=F) %>% 
   add_lines(~x, ~fits, color=~polynomial, data=fits) %>% 
