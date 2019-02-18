@@ -1,0 +1,36 @@
+---
+title: "Issues"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r misc_functions}
+source('misc_functions/functions.R')
+```
+
+```{r load_packages}
+library(tidyverse)
+library(plotly)
+library(modelr)
+library(mgcv)
+```
+
+## Choice of Smoothing Function
+
+There are a lot of choices, but the default is generally good enough.  There are specific cases for categorical factors, spatial random effects, etc., but you only use those when appropriate.
+
+```{r smooth_func}
+# cubic spline, gaussian process, and b-spline; see ?smooth.terms
+mod_gam2 <- gam(Overall ~ s(Income, bs = 'cs') + s(Edu, bs = 'gp') + s(Health, bs = 'ps'), data=pisa)
+summary(mod_gam2)
+```
+
+## Diagnostics
+
+The `gam.check` function mimics `lm` as far as the plots go.  Additionally, it provides some information as to whether you have allowed the term to be 'wiggly enough'.
+
+```{r diagnostics}
+gam.check(mod_gam2)
+```
+

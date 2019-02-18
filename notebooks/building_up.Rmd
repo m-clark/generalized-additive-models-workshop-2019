@@ -5,6 +5,17 @@ editor_options:
   chunk_output_type: inline
 ---
 
+```{r misc_functions}
+source('misc_functions/functions.R')
+```
+
+```{r load_packages}
+library(tidyverse)
+library(plotly)
+library(modelr)
+library(mgcv)
+```
+
 ```{r poly_dont_work}
 # assumes case_for_gams.Rmd has been run and those objects are in your environment
 

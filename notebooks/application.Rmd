@@ -1,0 +1,197 @@
+---
+title: "Application"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r misc_functions}
+source('misc_functions/functions.R')
+```
+
+```{r load_packages}
+library(tidyverse)
+library(plotly)
+library(modelr)
+library(mgcv)
+```
+
+The data set has been constructed using average Science scores by country from the Programme for International Student Assessment (PISA) 2006, along with GNI per capita (Purchasing Power Parity, 2005 dollars), Educational Index, Health Index, and Human Development Index from UN data. The key variables are as follows:
+
+
+- Overall Science Score (average score for 15 year olds)
+- Interest in science
+- Support for scientific inquiry
+- Income Index
+- Health Index
+- Education Index
+- Human Development Index (composed of the Income index, Health Index, and Education Index)
+
+The first thing to do is get the data in and do some initial inspections.
+
+```{r initial_inspection_of_pisa, echo=1}
+pisa = read.csv('data/pisasci2006.csv')
+
+pisa 
+
+pisa %>% select(-Country)
+```
+
+We can look at the individual relationships of covariates with overall science score.
+
+```{r bivariate_relationships, warning=FALSE, message=FALSE}
+dmelt = pisa %>% 
+  select(-Evidence, -Explain, -Issues) %>% 
+  gather(key=Variable, 
+         value=Value, 
+         -Overall, -Country)
+
+ggplot(aes(x=Value,y=Overall), data=dmelt) +
+  geom_point(color='#ff5500',alpha=.75) +
+  geom_smooth(se=F, lwd=.5, color='#00aaff') +
+  geom_text(aes(label=Country), alpha=0, size=1,angle=30, hjust=-.2,   # making transparent so only plotly will show the country
+            vjust=-.2) +
+  facet_wrap(~Variable, scales='free_x') +
+  labs(x='') +
+  theme_trueMinimal()
+```
+
+
+## Single Predictor
+
+### Linear Fit
+
+We will start with the simple situation of a single predictor. Let's begin by using a typical linear regression to predict science scores by the Income index.  We could use the standard R `lm` function, but I'll leave that as an exercise for comparison.  We can still do straightforward linear models with the `gam` function, and again it is important to note that the standard linear model can be seen as a special case of a GAM.
+
+```{r mod_lm, echo=-4}
+library(mgcv)
+mod_lm <- gam(Overall ~ Income, data=pisa)
+summary(mod_lm)
+```
+
+### GAM
+
+### Fitting the model
+
+Let's now fit an actual generalized additive model using the same cubic spline as our basis. We again use the `gam` function as before for basic model fitting, but now we are using a function `s` within the formula to denote the smooth terms.  Within that function we also specify the type of smooth, though a default is available.  I chose `bs = cr`, denoting cubic regression splines.
+
+```{r mod_gam1}
+mod_gam1 <- gam(Overall ~ s(Income, bs="cr"), data=pisa)
+summary(mod_gam1)
+```
+
+In the summary, we first see the distribution assumed, as well as the link function used, in this case normal and identity, respectively, which to iterate, had we had no smoothing, would result in a standard linear model.
+
+We have two general pieces of output:
+
+- **Parametric**: any non-smooth term, interpreted as any coefficient in the same GLM model.
+- **Smooth terms**: stuff we allow to 'wiggle' (or otherwise have a special relationship), interpreted visually via component plot.
+
+In this case, the only parametric component is the intercept, but it's good to remember that you are not bound to smooth every effect of interest, and indeed, as we will discuss in more detail later, part of the process may involve refitting the model with terms that were found to be linear for the most part anyway.  The smooth component of our model regarding a country's income and its relationship with overall science score suggests that it is statistically significant, but there are a couple of things in the model summary that would be unfamiliar.  You may consult the primary document for details, but the main thing is that you can interpret it like any result you'd see in a regression table.  The statistical significance is an approximation though, so again, let visualization be your guide.
+
+Since this is in the end a linear model with a normal distribution for the target, we can use the R^2 value as we would with `lm`.  Note that it already is adjusted for you. The *deviance explained* is the unadjusted R^2 in this case, but generalizes to other models that don't assume the normal distribution. The *scale estimate* is our residual sums of squares from the standard regression setting, and the *GCV* is a better estimate of what that would be on held-out (i.e. new) data.  The point is that you are seeing the usual output you have with other models, just with different labels.
+
+### Graphical Display
+
+The primary way to interpret the effect of income is visually though.  The *mgcv* package will provide a basic plot as follows:
+
+```{r mgcv_plot}
+plot(mod_gam1)
+```
+
+
+What you're seeing is a *component plot* with the y/fitted values centered.  Almost no one finds this intuitive in practice, nor is it usually what they'd report.  Instead we can get predictions at key values of other covariates (e.g. held at their mean or reference category).  In this case with only one predictor, we just get the predicted values on the original scale of the outcome.  We can use the `ggeffects` package for this (or see my [visibly package](https://m-clark.github.io/visibly)).
+
+```{r visualize_income_marginal_effect}
+library(ggeffects)
+
+plot_dat <- ggpredict(mod_gam1, terms = "Income")
+
+ggplot(plot_dat, aes(x = x, y = predicted)) + 
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = .25) +
+  geom_line(color = 'dodgerblue') + 
+  labs(x = 'Income')
+```
+
+### Model Comparison
+
+We can compare models via AIC or the GCV coefficient, both of which focus on the predictive capabilities of the model on new data.
+
+```{r model_comparison}
+AIC(mod_lm, mod_gam1)
+```
+
+Likelihood ratio test (approximate).
+
+```{r anova_gam}
+anova(mod_lm, mod_gam1, test="Chisq")
+```
+
+
+## Multiple Predictors
+
+
+### Linear FIt
+
+```{r mod_lm2}
+mod_lm2 <- gam(Overall ~ Income + Edu + Health, data=pisa)
+summary(mod_lm2)
+```
+
+### GAM
+
+```{r mod_gam2}
+mod_gam2 <- gam(Overall ~ s(Income) + s(Edu) + s(Health), data=pisa)
+summary(mod_gam2)
+```
+
+We can see the fit appears to be better.  In addition, as the effective degrees of freedom is 1 for Health, it is essentially a linear fit, so if desired, we can leave it among the `parametric` terms.
+
+```{r mod_gam2_plot}
+# plot(mod_gam2)
+
+library(patchwork) # devtools::install_github("thomasp85/patchwork")
+
+g1 = 
+  ggpredict(mod_gam2, terms = "Income") %>% 
+  ggplot(aes(x = x, y = predicted)) + 
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = .25) +
+  geom_line(color = 'dodgerblue') + 
+  labs(x = 'Income')
+g2 = 
+  ggpredict(mod_gam2, terms = "Edu") %>% 
+  ggplot(aes(x = x, y = predicted)) + 
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = .25) +
+  geom_line(color = 'dodgerblue') + 
+  labs(x = 'Edu')
+g3 = 
+  ggpredict(mod_gam2, terms = "Health") %>% 
+  ggplot(aes(x = x, y = predicted)) + 
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = .25) +
+  geom_line(color = 'dodgerblue') + 
+  labs(x = 'Health')
+
+(g2 + g3 + g1 + plot_layout(nrow = 2)) * theme_trueMinimal()
+```
+
+
+### 2D Smooths
+
+```{r mod_gam3}
+mod_gam3 <- gam(Overall ~ Health + te(Income, Edu), data=pisa)
+summary(mod_gam3)
+```
+
+
+```{r mod_gam3_plot}
+# requires the visibly package, otherwise see the main document; 
+# devtools::install_github("m-clark/visibly")
+visibly::plot_gam_3d(model = mod_gam3, main_var = Income, second_var = Edu, palette='bilbao', direction = 1)
+```
+
+### Model Comparison
+
+```{r model_comparison_redux}
+AIC(mod_lm2, mod_gam2)
+```
+
