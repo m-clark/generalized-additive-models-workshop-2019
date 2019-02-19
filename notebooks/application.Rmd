@@ -9,7 +9,7 @@ editor_options:
 source('misc_functions/functions.R')
 ```
 
-```{r load_packages}
+```{r load_packages, message=FALSE}
 library(tidyverse)
 library(plotly)
 library(modelr)

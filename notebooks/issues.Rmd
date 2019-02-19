@@ -26,6 +26,14 @@ mod_gam2 <- gam(Overall ~ s(Income, bs = 'cs') + s(Edu, bs = 'gp') + s(Health, b
 summary(mod_gam2)
 ```
 
+```{r by}
+mod_gam2 <- gam(Overall ~ s(Income, bs = 'cs') + s(Edu, bs = 'gp') + s(Health, bs = 'ps'), data=pisa)
+summary(mod_gam2)
+
+
+```
+
+
 ## Diagnostics
 
 The `gam.check` function mimics `lm` as far as the plots go.  Additionally, it provides some information as to whether you have allowed the term to be 'wiggly enough'.
