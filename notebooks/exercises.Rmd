@@ -17,8 +17,10 @@ This document can stand alone.
 source('misc_functions/functions.R')
 ```
 
-```{r load_packages}
+```{r load_packages, message=FALSE}
 library(tidyverse)
+library(plotly)
+library(modelr)
 library(mgcv)
 ```
 
@@ -29,7 +31,7 @@ A natural setting for GAMs is where there are observations over time. Perhaps we
 The following data regards global temperature anomalies, or deviations from the average, where the average is based on the mean global temperature from 1961-1990 (see the [FAQ](https://crudata.uea.ac.uk/cru/data/temperature/#faq) for details).   It comes in both wide and long form, where the columns in the wide format represent each month plus one column for annual.  We can use the wide format and ignore monthly data for now. Coverage for this data set runs through 2018.
 
 
-```{r gamtime_setup, echo=c(1:2, 5:8), eval=-(2:3), out.width='40%', fig.asp=.5}
+```{r anomaly_setup}
 ## Global temperatures
 # original at https://crudata.uea.ac.uk/cru/data/temperature/HadCRUT4-gl.dat
 load('data/global_temperatures.RData')
@@ -37,7 +39,7 @@ load('data/global_temperatures.RData')
 gtemp %>% 
   ggplot(aes(Year, Annual)) +
   geom_hline(yintercept = 0, color = 'gray75') +
-  geom_line(size = 2, color = '#ff5500', alpha=.5) +
+  geom_line(size = 1, color = '#ff5500', alpha=.5) +
   theme_trueMinimal()
 ```
 
@@ -52,12 +54,17 @@ $$ Anomaly \sim \mathcal{N(\mu, \sigma^2)}$$
 
 So take a crack at it! Use `Annual` as your target variable and `Year` as the lone predictor. Feel free to use different basis functions, change `k`, etc. if you like.  What is your interpretation of the trend?
 
-```{r model_anomaly}
+```{r model_anomaly, eval=FALSE}
 model_anomaly = gam(?, data = gtemp)
+
 summary(model_anomaly)
+
 plot(model_anomaly)
+
 gam.check(model_anomaly)
 ```
+
+
 
 
 ## Star Wars Physiology
@@ -74,10 +81,20 @@ qplot(data = sw, x = height, y = mass, geom = c('line','point'))
 ```
 
 
-```{r sw_model}
+```{r sw_model, eval=FALSE}
 model_hm = gam(?, data=sw)
+
 summary(model_hm)
+
 plot(model_hm)
 ```
 
+
+## More PISA
+
+Use the 2006 PISA data from the main application to explore effects of other covariates like interest in science and support for scientific inquiry, including possible interactions.  Compare models as well, e.g. via AIC.
+
+```{r model_pisa, eval=FALSE}
+model_pisa = gam(Overall ~ ?, data = pisa)
+```
 

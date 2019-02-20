@@ -10,14 +10,17 @@ editor_options:
 ---
 
 ## Initialization
+
 This assumes the prior Rmd files have been run.  See the README file.
 
 ```{r misc_functions}
 source('misc_functions/functions.R')
 ```
 
-```{r load_packages}
+```{r load_packages, message=FALSE}
 library(tidyverse)
+library(plotly)
+library(modelr)
 library(mgcv)
 ```
 
@@ -44,14 +47,16 @@ mod_math_sci = gam(Science ~ s(Math, by = Year_fac), data = pisa_math_sci)
 
 plot(mod_math_sci)
 # visibly::plot_gam_by(mod_math_sci, main_var = Math, by_var = Year_fac)
+```
 
-
-# another example
+```{r mod_reaction, message=FALSE}
+# another example; see ?sleepstudy for details
 library(lme4)
 mod_reaction = gam(Reaction ~ s(Days, by = Subject), data = sleepstudy)
 plot(mod_reaction)
 # visibly::plot_gam_by(mod_reaction, main_var = Days, by_var = Subject)
 ```
+
 
 
 ## Diagnostics
@@ -84,7 +89,7 @@ augment(mod_gam1)
 
 ## Model Comparison
 
-We can compare models with AIC or an anova test where appropriate.  In the following, the `ti` allows for a more standard 'main effects plus interaction' approach.
+We can compare models with AIC or an ANOVA test where appropriate.  In the following, the `ti` allows for a more standard 'main effects plus interaction' approach.
 
 ```{r model_comparison}
 mod_A = gam(Overall ~ s(Income, bs="cr", k=5) + s(Edu, bs="cr", k=5), data=pisa)

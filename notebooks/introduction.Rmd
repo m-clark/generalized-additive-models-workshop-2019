@@ -15,7 +15,7 @@ editor_options:
 source('misc_functions/functions.R')
 ```
 
-```{r load_packages}
+```{r load_packages, message=FALSE}
 library(tidyverse)
 library(plotly)
 library(modelr)
@@ -24,7 +24,7 @@ library(mgcv)
 
 ## Data
 
-The `mcycle` data regard a series of measurements of head acceleration in a simulated motorcycle accident, used to test crash helmets. The observations consist of acceleromter readings taken through time, thus there are only two variables `times`, in milliseconds after impact, and `accel`, measured in g, which can be positive or negative with 0 as a resting state.
+The `mcycle` data regard a series of measurements of head acceleration in a simulated motorcycle accident, used to test crash helmets. The observations consist of accelerometer readings taken through time, thus there are only two variables `times`, in milliseconds after impact, and `accel`, measured in g, which can be positive or negative with 0 as a resting state.
 
 ```{r load_mcycle}
 data(mcycle, package = 'MASS')

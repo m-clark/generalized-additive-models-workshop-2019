@@ -11,7 +11,9 @@ editor_options:
 
 ## Initialization
 
-```{r misc_functions}
+This assumes the prior Rmd files have been run.  See the README file.
+
+```{r misc_functions, message=FALSE}
 source('misc_functions/functions.R')
 ```
 
@@ -133,7 +135,7 @@ plot_ly(data=d) %>%
 
 ## GAM to the rescue!
 
-```{r gam_vs_poly}
+```{r gam_vs_poly, warning=FALSE}
 d %>% 
   qplot(data=., 
         x = x, 

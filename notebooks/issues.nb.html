@@ -1841,9 +1841,11 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KG1nY3YpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHBsb3RseSlcbmxpYnJhcnkobW9kZWxyKVxubGlicmFyeShtZ2N2KVxuYGBgIn0= -->
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(mgcv)</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(plotly)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">library</span>(modelr)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">library</span>(mgcv)</a></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1863,7 +1865,7 @@ $(document).ready(function () {
 <p>A very common setting would be to allow smooth terms to vary over groups.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGlzYV9tYXRoX3NjaSA9IHJlYWRyOjpyZWFkX2NzdignZGF0YS9waXNhXzIwMDBfdGhydV8yMDE1X21hdGhfc2NpZW5jZS5jc3YnKVxucGlzYV9tYXRoX3NjaSA9IHBpc2FfbWF0aF9zY2kgJT4lIFxuICBmaWx0ZXIoIWdyZXBsKEp1cmlzZGljdGlvbiwgcGF0dGVybiA9ICdBdmVyYWdlJykpICU+JSBcbiAgc3ByZWFkKGtleSA9IHRlc3QsIHZhbHVlID0gQXZlcmFnZSkgJT4lIFxuICBtdXRhdGUoWWVhcl9mYWMgPSBmYWN0b3IoWWVhcikpXG5cbm1vZF9tYXRoX3NjaSA9IGdhbShTY2llbmNlIH4gcyhNYXRoLCBieSA9IFllYXJfZmFjKSwgZGF0YSA9IHBpc2FfbWF0aF9zY2kpXG5cbnBsb3QobW9kX21hdGhfc2NpKVxuIyB2aXNpYmx5OjpwbG90X2dhbV9ieShtb2RfbWF0aF9zY2ksIG1haW5fdmFyID0gTWF0aCwgYnlfdmFyID0gWWVhcl9mYWMpXG5cblxuIyBhbm90aGVyIGV4YW1wbGVcbmxpYnJhcnkobG1lNClcbm1vZF9yZWFjdGlvbiA9IGdhbShSZWFjdGlvbiB+IHMoRGF5cywgYnkgPSBTdWJqZWN0KSwgZGF0YSA9IHNsZWVwc3R1ZHkpXG5wbG90KG1vZF9yZWFjdGlvbilcbiMgdmlzaWJseTo6cGxvdF9nYW1fYnkobW9kX3JlYWN0aW9uLCBtYWluX3ZhciA9IERheXMsIGJ5X3ZhciA9IFN1YmplY3QpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGlzYV9tYXRoX3NjaSA9IHJlYWRyOjpyZWFkX2NzdignZGF0YS9waXNhXzIwMDBfdGhydV8yMDE1X21hdGhfc2NpZW5jZS5jc3YnKVxucGlzYV9tYXRoX3NjaSA9IHBpc2FfbWF0aF9zY2kgJT4lIFxuICBmaWx0ZXIoIWdyZXBsKEp1cmlzZGljdGlvbiwgcGF0dGVybiA9ICdBdmVyYWdlJykpICU+JSBcbiAgc3ByZWFkKGtleSA9IHRlc3QsIHZhbHVlID0gQXZlcmFnZSkgJT4lIFxuICBtdXRhdGUoWWVhcl9mYWMgPSBmYWN0b3IoWWVhcikpXG5cbm1vZF9tYXRoX3NjaSA9IGdhbShTY2llbmNlIH4gcyhNYXRoLCBieSA9IFllYXJfZmFjKSwgZGF0YSA9IHBpc2FfbWF0aF9zY2kpXG5cbnBsb3QobW9kX21hdGhfc2NpKVxuIyB2aXNpYmx5OjpwbG90X2dhbV9ieShtb2RfbWF0aF9zY2ksIG1haW5fdmFyID0gTWF0aCwgYnlfdmFyID0gWWVhcl9mYWMpXG5gYGAifQ== -->
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">pisa_math_sci =<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_csv</span>(<span class="st">'data/pisa_2000_thru_2015_math_science.csv'</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">pisa_math_sci =<span class="st"> </span>pisa_math_sci <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">grepl</span>(Jurisdiction, <span class="dt">pattern =</span> <span class="st">'Average'</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -1873,14 +1875,18 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb4-7" data-line-number="7">mod_math_sci =<span class="st"> </span><span class="kw">gam</span>(Science <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Math, <span class="dt">by =</span> Year_fac), <span class="dt">data =</span> pisa_math_sci)</a>
 <a class="sourceLine" id="cb4-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="kw">plot</span>(mod_math_sci)</a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co"># visibly::plot_gam_by(mod_math_sci, main_var = Math, by_var = Year_fac)</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co"># another example</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="kw">library</span>(lme4)</a>
-<a class="sourceLine" id="cb4-15" data-line-number="15">mod_reaction =<span class="st"> </span><span class="kw">gam</span>(Reaction <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Days, <span class="dt">by =</span> Subject), <span class="dt">data =</span> sleepstudy)</a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="kw">plot</span>(mod_reaction)</a>
-<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co"># visibly::plot_gam_by(mod_reaction, main_var = Days, by_var = Subject)</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co"># visibly::plot_gam_by(mod_math_sci, main_var = Math, by_var = Year_fac)</span></a></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBhbm90aGVyIGV4YW1wbGU7IHNlZSA/c2xlZXBzdHVkeSBmb3IgZGV0YWlsc1xubGlicmFyeShsbWU0KVxubW9kX3JlYWN0aW9uID0gZ2FtKFJlYWN0aW9uIH4gcyhEYXlzLCBieSA9IFN1YmplY3QpLCBkYXRhID0gc2xlZXBzdHVkeSlcbnBsb3QobW9kX3JlYWN0aW9uKVxuIyB2aXNpYmx5OjpwbG90X2dhbV9ieShtb2RfcmVhY3Rpb24sIG1haW5fdmFyID0gRGF5cywgYnlfdmFyID0gU3ViamVjdClcbmBgYCJ9 -->
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># another example; see ?sleepstudy for details</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">library</span>(lme4)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">mod_reaction =<span class="st"> </span><span class="kw">gam</span>(Reaction <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Days, <span class="dt">by =</span> Subject), <span class="dt">data =</span> sleepstudy)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">plot</span>(mod_reaction)</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co"># visibly::plot_gam_by(mod_reaction, main_var = Days, by_var = Subject)</span></a></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1891,7 +1897,7 @@ $(document).ready(function () {
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2FtLmNoZWNrKG1vZF9nYW0yKSAgIyBtb2RfZ2FtMiBpcyBmcm9tIGFwcGxpY2F0aW9uLlJtZFxuYGBgIn0= -->
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">gam.check</span>(mod_gam2)  <span class="co"># mod_gam2 is from application.Rmd</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">gam.check</span>(mod_gam2)  <span class="co"># mod_gam2 is from application.Rmd</span></a></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1902,41 +1908,41 @@ $(document).ready(function () {
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShtb2RlbHIpXG5cbnBpc2EgJT4lIFxuICBhZGRfcHJlZGljdGlvbnMobW9kX2dhbTEpXG5gYGAifQ== -->
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(modelr)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">pisa <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span><span class="kw">add_predictions</span>(mod_gam1)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(modelr)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">pisa <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw">add_predictions</span>(mod_gam1)</a></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShicm9vbSlcblxuYXVnbWVudChtb2RfZ2FtMSlcbmBgYCJ9 -->
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(broom)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">augment</span>(mod_gam1)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">library</span>(broom)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">augment</span>(mod_gam1)</a></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
 <div id="model-comparison" class="section level2">
 <h2>Model Comparison</h2>
-<p>We can compare models with AIC or an anova test where appropriate. In the following, the <code>ti</code> allows for a more standard ‘main effects plus interaction’ approach.</p>
+<p>We can compare models with AIC or an ANOVA test where appropriate. In the following, the <code>ti</code> allows for a more standard ‘main effects plus interaction’ approach.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kX0EgPSBnYW0oT3ZlcmFsbCB+IHMoSW5jb21lLCBicz1cImNyXCIsIGs9NSkgKyBzKEVkdSwgYnM9XCJjclwiLCBrPTUpLCBkYXRhPXBpc2EpXG5tb2RfQiA9IGdhbShPdmVyYWxsIH4gdGkoSW5jb21lLCBicz1cImNyXCIsIGs9NSkgKyB0aShFZHUsIGJzPVwiY3JcIiwgaz01KSArIHRpKEluY29tZSwgRWR1LCBicz0nY3InKSwgZGF0YT1waXNhKVxuXG5BSUMobW9kX0EsIG1vZF9CKVxuYW5vdmEobW9kX0EsIG1vZF9CLCB0ZXN0PVwiQ2hpc3FcIilcbmBgYCJ9 -->
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">mod_A =<span class="st"> </span><span class="kw">gam</span>(Overall <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Income, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(Edu, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>), <span class="dt">data=</span>pisa)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">mod_B =<span class="st"> </span><span class="kw">gam</span>(Overall <span class="op">~</span><span class="st"> </span><span class="kw">ti</span>(Income, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ti</span>(Edu, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ti</span>(Income, Edu, <span class="dt">bs=</span><span class="st">'cr'</span>), <span class="dt">data=</span>pisa)</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">AIC</span>(mod_A, mod_B)</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="kw">anova</span>(mod_A, mod_B, <span class="dt">test=</span><span class="st">&quot;Chisq&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">mod_A =<span class="st"> </span><span class="kw">gam</span>(Overall <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(Income, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(Edu, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>), <span class="dt">data=</span>pisa)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">mod_B =<span class="st"> </span><span class="kw">gam</span>(Overall <span class="op">~</span><span class="st"> </span><span class="kw">ti</span>(Income, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ti</span>(Edu, <span class="dt">bs=</span><span class="st">&quot;cr&quot;</span>, <span class="dt">k=</span><span class="dv">5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ti</span>(Income, Edu, <span class="dt">bs=</span><span class="st">'cr'</span>), <span class="dt">data=</span>pisa)</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="kw">AIC</span>(mod_A, mod_B)</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">anova</span>(mod_A, mod_B, <span class="dt">test=</span><span class="st">&quot;Chisq&quot;</span>)</a></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSXNzdWVzIgpvdXRwdXQ6IAogIGh0bWxfbm90ZWJvb2s6IAogICAgY29kZV9mb2xkaW5nOiBub25lCiAgICBoaWdobGlnaHQ6IHB5Z21lbnRzCiAgICB0aGVtZTogc2FuZHN0b25lCmVkaXRvcl9vcHRpb25zOiAKICBjaHVua19vdXRwdXRfdHlwZTogaW5saW5lCi0tLQoKIyMgSW5pdGlhbGl6YXRpb24KVGhpcyBhc3N1bWVzIHRoZSBwcmlvciBSbWQgZmlsZXMgaGF2ZSBiZWVuIHJ1bi4gIFNlZSB0aGUgUkVBRE1FIGZpbGUuCgpgYGB7ciBtaXNjX2Z1bmN0aW9uc30Kc291cmNlKCdtaXNjX2Z1bmN0aW9ucy9mdW5jdGlvbnMuUicpCmBgYAoKYGBge3IgbG9hZF9wYWNrYWdlc30KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkobWdjdikKYGBgCgojIyBDaG9pY2Ugb2YgU21vb3RoaW5nIEZ1bmN0aW9uCgpUaGVyZSBhcmUgYSBsb3Qgb2YgY2hvaWNlcywgYnV0IHRoZSBkZWZhdWx0IGlzIGdlbmVyYWxseSBnb29kIGVub3VnaC4gIFRoZXJlIGFyZSBzcGVjaWZpYyBjYXNlcyBmb3IgY2F0ZWdvcmljYWwgZmFjdG9ycywgc3BhdGlhbCByYW5kb20gZWZmZWN0cywgZXRjLiwgYnV0IHlvdSBvbmx5IHVzZSB0aG9zZSB3aGVuIGFwcHJvcHJpYXRlLgoKYGBge3Igc21vb3RoX2Z1bmN9CiMgY3ViaWMgc3BsaW5lLCBnYXVzc2lhbiBwcm9jZXNzLCBhbmQgYi1zcGxpbmU7IHNlZSA/c21vb3RoLnRlcm1zCm1vZF9nYW1fcyA8LSBnYW0oT3ZlcmFsbCB+IHMoSW5jb21lLCBicyA9ICdjcycpICsgcyhFZHUsIGJzID0gJ2dwJykgKyBzKEhlYWx0aCwgYnMgPSAncHMnKSwgZGF0YT1waXNhKQpzdW1tYXJ5KG1vZF9nYW1fcykKYGBgCgpBIHZlcnkgY29tbW9uIHNldHRpbmcgd291bGQgYmUgdG8gYWxsb3cgc21vb3RoIHRlcm1zIHRvIHZhcnkgb3ZlciBncm91cHMuCgpgYGB7ciBieX0KcGlzYV9tYXRoX3NjaSA9IHJlYWRyOjpyZWFkX2NzdignZGF0YS9waXNhXzIwMDBfdGhydV8yMDE1X21hdGhfc2NpZW5jZS5jc3YnKQpwaXNhX21hdGhfc2NpID0gcGlzYV9tYXRoX3NjaSAlPiUgCiAgZmlsdGVyKCFncmVwbChKdXJpc2RpY3Rpb24sIHBhdHRlcm4gPSAnQXZlcmFnZScpKSAlPiUgCiAgc3ByZWFkKGtleSA9IHRlc3QsIHZhbHVlID0gQXZlcmFnZSkgJT4lIAogIG11dGF0ZShZZWFyX2ZhYyA9IGZhY3RvcihZZWFyKSkKCm1vZF9tYXRoX3NjaSA9IGdhbShTY2llbmNlIH4gcyhNYXRoLCBieSA9IFllYXJfZmFjKSwgZGF0YSA9IHBpc2FfbWF0aF9zY2kpCgpwbG90KG1vZF9tYXRoX3NjaSkKIyB2aXNpYmx5OjpwbG90X2dhbV9ieShtb2RfbWF0aF9zY2ksIG1haW5fdmFyID0gTWF0aCwgYnlfdmFyID0gWWVhcl9mYWMpCgoKIyBhbm90aGVyIGV4YW1wbGUKbGlicmFyeShsbWU0KQptb2RfcmVhY3Rpb24gPSBnYW0oUmVhY3Rpb24gfiBzKERheXMsIGJ5ID0gU3ViamVjdCksIGRhdGEgPSBzbGVlcHN0dWR5KQpwbG90KG1vZF9yZWFjdGlvbikKIyB2aXNpYmx5OjpwbG90X2dhbV9ieShtb2RfcmVhY3Rpb24sIG1haW5fdmFyID0gRGF5cywgYnlfdmFyID0gU3ViamVjdCkKYGBgCgoKIyMgRGlhZ25vc3RpY3MKClRoZSBgZ2FtLmNoZWNrYCBmdW5jdGlvbiBtaW1pY3MgYGxtYCBhcyBmYXIgYXMgdGhlIHBsb3RzIGdvLiAgQWRkaXRpb25hbGx5LCBpdCBwcm92aWRlcyBzb21lIGluZm9ybWF0aW9uIGFzIHRvIHdoZXRoZXIgeW91IGhhdmUgYWxsb3dlZCB0aGUgdGVybSB0byBiZSAnd2lnZ2x5IGVub3VnaCcuCgpgYGB7ciBkaWFnbm9zdGljc30KZ2FtLmNoZWNrKG1vZF9nYW0yKSAgIyBtb2RfZ2FtMiBpcyBmcm9tIGFwcGxpY2F0aW9uLlJtZApgYGAKCiMjIFByZWRpY3Rpb24KCldlIGNhbiBnZXQgcHJlZGljdGlvbnMgdmlhIHRoZSBzdGFuZGFyZCBgcHJlZGljdGAgZnVuY3Rpb24sIGJ1dCBwYWNrYWdlcyBsaWtlIGBtb2RlbHJgIGFuZCBgYnJvb21gIGNhbiBtYWtlIGl0IGVhc3kgdG8gYWRkIHRvIGN1cnJlbnQgZGF0YSBmb3IgcGxvdHRpbmcuCgpgYGB7ciBwcmVkaWN0X21vZGVscn0KbGlicmFyeShtb2RlbHIpCgpwaXNhICU+JSAKICBhZGRfcHJlZGljdGlvbnMobW9kX2dhbTEpCmBgYAoKYGBge3IgcHJlZGljdF9icm9vbX0KbGlicmFyeShicm9vbSkKCmF1Z21lbnQobW9kX2dhbTEpCmBgYAoKCgoKIyMgTW9kZWwgQ29tcGFyaXNvbgoKV2UgY2FuIGNvbXBhcmUgbW9kZWxzIHdpdGggQUlDIG9yIGFuIGFub3ZhIHRlc3Qgd2hlcmUgYXBwcm9wcmlhdGUuICBJbiB0aGUgZm9sbG93aW5nLCB0aGUgYHRpYCBhbGxvd3MgZm9yIGEgbW9yZSBzdGFuZGFyZCAnbWFpbiBlZmZlY3RzIHBsdXMgaW50ZXJhY3Rpb24nIGFwcHJvYWNoLgoKYGBge3IgbW9kZWxfY29tcGFyaXNvbn0KbW9kX0EgPSBnYW0oT3ZlcmFsbCB+IHMoSW5jb21lLCBicz0iY3IiLCBrPTUpICsgcyhFZHUsIGJzPSJjciIsIGs9NSksIGRhdGE9cGlzYSkKbW9kX0IgPSBnYW0oT3ZlcmFsbCB+IHRpKEluY29tZSwgYnM9ImNyIiwgaz01KSArIHRpKEVkdSwgYnM9ImNyIiwgaz01KSArIHRpKEluY29tZSwgRWR1LCBicz0nY3InKSwgZGF0YT1waXNhKQoKQUlDKG1vZF9BLCBtb2RfQikKYW5vdmEobW9kX0EsIG1vZF9CLCB0ZXN0PSJDaGlzcSIpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSXNzdWVzIgpvdXRwdXQ6IAogIGh0bWxfbm90ZWJvb2s6IAogICAgY29kZV9mb2xkaW5nOiBub25lCiAgICBoaWdobGlnaHQ6IHB5Z21lbnRzCiAgICB0aGVtZTogc2FuZHN0b25lCmVkaXRvcl9vcHRpb25zOiAKICBjaHVua19vdXRwdXRfdHlwZTogaW5saW5lCi0tLQoKIyMgSW5pdGlhbGl6YXRpb24KClRoaXMgYXNzdW1lcyB0aGUgcHJpb3IgUm1kIGZpbGVzIGhhdmUgYmVlbiBydW4uICBTZWUgdGhlIFJFQURNRSBmaWxlLgoKYGBge3IgbWlzY19mdW5jdGlvbnN9CnNvdXJjZSgnbWlzY19mdW5jdGlvbnMvZnVuY3Rpb25zLlInKQpgYGAKCmBgYHtyIGxvYWRfcGFja2FnZXMsIG1lc3NhZ2U9RkFMU0V9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KHBsb3RseSkKbGlicmFyeShtb2RlbHIpCmxpYnJhcnkobWdjdikKYGBgCgojIyBDaG9pY2Ugb2YgU21vb3RoaW5nIEZ1bmN0aW9uCgpUaGVyZSBhcmUgYSBsb3Qgb2YgY2hvaWNlcywgYnV0IHRoZSBkZWZhdWx0IGlzIGdlbmVyYWxseSBnb29kIGVub3VnaC4gIFRoZXJlIGFyZSBzcGVjaWZpYyBjYXNlcyBmb3IgY2F0ZWdvcmljYWwgZmFjdG9ycywgc3BhdGlhbCByYW5kb20gZWZmZWN0cywgZXRjLiwgYnV0IHlvdSBvbmx5IHVzZSB0aG9zZSB3aGVuIGFwcHJvcHJpYXRlLgoKYGBge3Igc21vb3RoX2Z1bmN9CiMgY3ViaWMgc3BsaW5lLCBnYXVzc2lhbiBwcm9jZXNzLCBhbmQgYi1zcGxpbmU7IHNlZSA/c21vb3RoLnRlcm1zCm1vZF9nYW1fcyA8LSBnYW0oT3ZlcmFsbCB+IHMoSW5jb21lLCBicyA9ICdjcycpICsgcyhFZHUsIGJzID0gJ2dwJykgKyBzKEhlYWx0aCwgYnMgPSAncHMnKSwgZGF0YT1waXNhKQpzdW1tYXJ5KG1vZF9nYW1fcykKYGBgCgpBIHZlcnkgY29tbW9uIHNldHRpbmcgd291bGQgYmUgdG8gYWxsb3cgc21vb3RoIHRlcm1zIHRvIHZhcnkgb3ZlciBncm91cHMuCgpgYGB7ciBieX0KcGlzYV9tYXRoX3NjaSA9IHJlYWRyOjpyZWFkX2NzdignZGF0YS9waXNhXzIwMDBfdGhydV8yMDE1X21hdGhfc2NpZW5jZS5jc3YnKQpwaXNhX21hdGhfc2NpID0gcGlzYV9tYXRoX3NjaSAlPiUgCiAgZmlsdGVyKCFncmVwbChKdXJpc2RpY3Rpb24sIHBhdHRlcm4gPSAnQXZlcmFnZScpKSAlPiUgCiAgc3ByZWFkKGtleSA9IHRlc3QsIHZhbHVlID0gQXZlcmFnZSkgJT4lIAogIG11dGF0ZShZZWFyX2ZhYyA9IGZhY3RvcihZZWFyKSkKCm1vZF9tYXRoX3NjaSA9IGdhbShTY2llbmNlIH4gcyhNYXRoLCBieSA9IFllYXJfZmFjKSwgZGF0YSA9IHBpc2FfbWF0aF9zY2kpCgpwbG90KG1vZF9tYXRoX3NjaSkKIyB2aXNpYmx5OjpwbG90X2dhbV9ieShtb2RfbWF0aF9zY2ksIG1haW5fdmFyID0gTWF0aCwgYnlfdmFyID0gWWVhcl9mYWMpCmBgYAoKYGBge3IgbW9kX3JlYWN0aW9uLCBtZXNzYWdlPUZBTFNFfQojIGFub3RoZXIgZXhhbXBsZTsgc2VlID9zbGVlcHN0dWR5IGZvciBkZXRhaWxzCmxpYnJhcnkobG1lNCkKbW9kX3JlYWN0aW9uID0gZ2FtKFJlYWN0aW9uIH4gcyhEYXlzLCBieSA9IFN1YmplY3QpLCBkYXRhID0gc2xlZXBzdHVkeSkKcGxvdChtb2RfcmVhY3Rpb24pCiMgdmlzaWJseTo6cGxvdF9nYW1fYnkobW9kX3JlYWN0aW9uLCBtYWluX3ZhciA9IERheXMsIGJ5X3ZhciA9IFN1YmplY3QpCmBgYAoKCgojIyBEaWFnbm9zdGljcwoKVGhlIGBnYW0uY2hlY2tgIGZ1bmN0aW9uIG1pbWljcyBgbG1gIGFzIGZhciBhcyB0aGUgcGxvdHMgZ28uICBBZGRpdGlvbmFsbHksIGl0IHByb3ZpZGVzIHNvbWUgaW5mb3JtYXRpb24gYXMgdG8gd2hldGhlciB5b3UgaGF2ZSBhbGxvd2VkIHRoZSB0ZXJtIHRvIGJlICd3aWdnbHkgZW5vdWdoJy4KCmBgYHtyIGRpYWdub3N0aWNzfQpnYW0uY2hlY2sobW9kX2dhbTIpICAjIG1vZF9nYW0yIGlzIGZyb20gYXBwbGljYXRpb24uUm1kCmBgYAoKIyMgUHJlZGljdGlvbgoKV2UgY2FuIGdldCBwcmVkaWN0aW9ucyB2aWEgdGhlIHN0YW5kYXJkIGBwcmVkaWN0YCBmdW5jdGlvbiwgYnV0IHBhY2thZ2VzIGxpa2UgYG1vZGVscmAgYW5kIGBicm9vbWAgY2FuIG1ha2UgaXQgZWFzeSB0byBhZGQgdG8gY3VycmVudCBkYXRhIGZvciBwbG90dGluZy4KCmBgYHtyIHByZWRpY3RfbW9kZWxyfQpsaWJyYXJ5KG1vZGVscikKCnBpc2EgJT4lIAogIGFkZF9wcmVkaWN0aW9ucyhtb2RfZ2FtMSkKYGBgCgpgYGB7ciBwcmVkaWN0X2Jyb29tfQpsaWJyYXJ5KGJyb29tKQoKYXVnbWVudChtb2RfZ2FtMSkKYGBgCgoKCgojIyBNb2RlbCBDb21wYXJpc29uCgpXZSBjYW4gY29tcGFyZSBtb2RlbHMgd2l0aCBBSUMgb3IgYW4gQU5PVkEgdGVzdCB3aGVyZSBhcHByb3ByaWF0ZS4gIEluIHRoZSBmb2xsb3dpbmcsIHRoZSBgdGlgIGFsbG93cyBmb3IgYSBtb3JlIHN0YW5kYXJkICdtYWluIGVmZmVjdHMgcGx1cyBpbnRlcmFjdGlvbicgYXBwcm9hY2guCgpgYGB7ciBtb2RlbF9jb21wYXJpc29ufQptb2RfQSA9IGdhbShPdmVyYWxsIH4gcyhJbmNvbWUsIGJzPSJjciIsIGs9NSkgKyBzKEVkdSwgYnM9ImNyIiwgaz01KSwgZGF0YT1waXNhKQptb2RfQiA9IGdhbShPdmVyYWxsIH4gdGkoSW5jb21lLCBicz0iY3IiLCBrPTUpICsgdGkoRWR1LCBicz0iY3IiLCBrPTUpICsgdGkoSW5jb21lLCBFZHUsIGJzPSdjcicpLCBkYXRhPXBpc2EpCgpBSUMobW9kX0EsIG1vZF9CKQphbm92YShtb2RfQSwgbW9kX0IsIHRlc3Q9IkNoaXNxIikKYGBgCgo=</div>
 
 
 

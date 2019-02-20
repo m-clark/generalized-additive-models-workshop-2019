@@ -11,6 +11,8 @@ editor_options:
 
 ## Initialization
 
+This assumes the prior Rmd files have been run.  See the README file.
+
 ```{r misc_functions}
 source('misc_functions/functions.R')
 ```
@@ -140,7 +142,7 @@ anova(mod_lm, mod_gam1, test="Chisq")
 
 We'll now make the model more interesting by adding additional predictors.  Let's add Health and Education.
 
-### Linear FIt
+### Linear Fit
 
 We'll start with a standard linear regression model as we did before.
 
