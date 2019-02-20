@@ -1,0 +1,83 @@
+---
+title: "Exercises"
+output: 
+  html_notebook: 
+    code_folding: none
+    highlight: pygments
+    theme: sandstone
+editor_options: 
+  chunk_output_type: inline
+---
+
+## Initialization
+
+This document can stand alone.
+
+```{r misc_functions}
+source('misc_functions/functions.R')
+```
+
+```{r load_packages}
+library(tidyverse)
+library(mgcv)
+```
+
+## Global Temperature Anomalies
+
+A natural setting for GAMs is where there are observations over time. Perhaps we want to examine the trend over time. The standard linear model would posit a linear trend, but we often would doubt that is the case in many circumstances.  How would we do this with a GAM?  We can incorporate a covariate representing the time component and add it as a smooth term.  
+
+The following data regards global temperature anomalies, or deviations from the average, where the average is based on the mean global temperature from 1961-1990 (see the [FAQ](https://crudata.uea.ac.uk/cru/data/temperature/#faq) for details).   It comes in both wide and long form, where the columns in the wide format represent each month plus one column for annual.  We can use the wide format and ignore monthly data for now. Coverage for this data set runs through 2018.
+
+
+```{r gamtime_setup, echo=c(1:2, 5:8), eval=-(2:3), out.width='40%', fig.asp=.5}
+## Global temperatures
+# original at https://crudata.uea.ac.uk/cru/data/temperature/HadCRUT4-gl.dat
+load('data/global_temperatures.RData')
+
+gtemp %>% 
+  ggplot(aes(Year, Annual)) +
+  geom_hline(yintercept = 0, color = 'gray75') +
+  geom_line(size = 2, color = '#ff5500', alpha=.5) +
+  theme_trueMinimal()
+```
+
+
+
+In terms of the models we've discussed, we can express the current model more formally as follows, where the mean anomaly is a function of time, which will be our smooth term in the GAM.
+
+
+$$ \mu = b_0 + f(Year)$$
+$$ Anomaly \sim \mathcal{N(\mu, \sigma^2)}$$
+
+
+So take a crack at it! Use `Annual` as your target variable and `Year` as the lone predictor. Feel free to use different basis functions, change `k`, etc. if you like.  What is your interpretation of the trend?
+
+```{r model_anomaly}
+model_anomaly = gam(?, data = gtemp)
+summary(model_anomaly)
+plot(model_anomaly)
+gam.check(model_anomaly)
+```
+
+
+## Star Wars Physiology
+
+Use the `starwars` data to predict `mass` (in kilos) by `height` (in cm). `starwars` is in `dplyr` package, so already available.  After initial inspection, what do you think the trend will be based on a GAM fit?
+
+```{r sw_data}
+# jabba (the non-human version) will ruin the model, so we drop him
+sw = starwars %>% 
+  filter(mass < 200)  %>% 
+  mutate(species = fct_lump(species, n = 1))
+
+qplot(data = sw, x = height, y = mass, geom = c('line','point'))
+```
+
+
+```{r sw_model}
+model_hm = gam(?, data=sw)
+summary(model_hm)
+plot(model_hm)
+```
+
+
