@@ -32,7 +32,7 @@ data(mcycle, package = 'MASS')
 qplot(data=mcycle, x=times, y=accel)
 ```
 
-Now fit a regression model of your choosing (e.g. using `lm` `glm` or your favorite package) and plot your predictions against it.  
+Now fit a regression model of your choosing (e.g. using `lm` `glm` or your favorite package in lieu of `modelfunc`) and plot your predictions against it.  If you don't have any ideas, just use `lm(accel ~ times, data=mcycle)`.
 
 ```{r model0, eval=FALSE}
 model_start = modelfunc(?, data = mcycle)
@@ -109,6 +109,7 @@ mcycle3 =
                                     'Polynomial Regression (cubic)', 
                                     'Smoothing Splines'
                                     )))
+
 ggplot(aes(x=times,y=accel), data=mcycle3) + 
   geom_point(color='#ff5500', alpha=.25, size=1) + 
   geom_line(aes(y=value), color='#00aaff', size=.75) +
