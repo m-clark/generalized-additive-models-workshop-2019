@@ -1,9 +1,15 @@
 ---
 title: "The Case for GAMs"
-output: html_notebook
+output: 
+  html_notebook: 
+    code_folding: none
+    highlight: pygments
+    theme: sandstone
 editor_options: 
   chunk_output_type: inline
 ---
+
+## Initialization
 
 ```{r misc_functions}
 source('misc_functions/functions.R')
@@ -19,19 +25,28 @@ library(mgcv)
 
 ## Using Standard Methods
 
+Let's see what happens when we apply standard methods to data that just doesn't work that way.  First we'll start with some generic data to illustrate the point.
+
 ```{r simulated_data}
 set.seed(123)
 library(mgcv)
 dat = gamSim(1, n=400, dist="normal", scale=1, verbose=F)
 ```
 
+We can use a basic linear regression and see how things go.
+
 ```{r demolm}
 mod = lm(y ~ x1 + x2, data=dat)
 summary(mod)
 ```
+
+Everything is nice and tidy. We have straightforward information, positive effect of x1, negative for x2, and familiar output. Let’s look at some diagnostics.
+
 ```{r diagnostics}
 plot(mod, which = 1:2)
 ```
+
+Some issues might be present, as we might be getting a little more variance with some, especially higher, fitted values. We’re also a little loose in the tails of the distribution of the residuals. Let’s compare our predictions to the data. With a strong model, we might see a cigar shaped cloud converging to a line with slope 1 as the fit gets better. We seem to be having some issues here, as the residual plot noted above.
 
 ```{r general_fit}
 # requires broom and glue packages
@@ -47,6 +62,8 @@ broom::augment(mod) %>%
   theme_minimal()
 ```
 
+Now let’s go back and visualize the data. The following plots both predictors against the target variable.
+
 ```{r relationships}
 dat %>% 
   select(x1, x2, y) %>% 
@@ -59,7 +76,11 @@ dat %>%
   theme_trueMinimal()
 ```
 
+So even with diagnostics that didn't appear too bad, we appear to not be capturing what's going on with the data that well at all!
+
 ## Heteroscedasticity, non-normality, etc.
+
+We can try a log transformation. But this won't help us.
 
 ```{r log_no_help}
 modlog = lm(log(y) ~ x1 + x2, dat)
@@ -80,6 +101,8 @@ broom::augment(mod) %>%
 
 
 ## Polynomial Regression
+
+Likewise, we can try polynomial regression, but for most situations, the functional form is just something we might guess at, and/or it still won't help.  Let's look at a fairly complex relationship.
 
 ```{r simData}
 set.seed(123)
@@ -104,8 +127,19 @@ plot_ly(data=d) %>%
   add_markers(~x, ~y, marker=list(color='#ff5500', opacity=.2), showlegend=F) %>% 
   add_lines(~x, ~fits, color=~polynomial, data=fits) %>% 
   theme_plotly()
-
 ```
 
 
+
+## GAM to the rescue!
+
+```{r gam_vs_poly}
+d %>% 
+  qplot(data=., 
+        x = x, 
+        y = y, 
+        geom=c('point', 'smooth'), 
+        method = 'gam',
+        formula = y ~ s(x))
+```
 

@@ -1,9 +1,15 @@
 ---
 title: "Building up to GAMs"
-output: html_notebook
+output: 
+  html_notebook: 
+    code_folding: none
+    highlight: pygments
+    theme: sandstone
 editor_options: 
   chunk_output_type: inline
 ---
+
+## Initialization
 
 ```{r misc_functions}
 source('misc_functions/functions.R')
@@ -34,7 +40,7 @@ plot_ly(data=d) %>%
 
 ## Piecewise polynomial
 
-<span class="newthought">So how might we solve the problem</span> we saw with polynomial regression?  One way would be to divide the data into chunks at various points (<span class='emph'>knots</span>), and fit a linear regression or polynomial model within that subset of data.  The following fits a cubic polynomial for each 10 evenly divided subsets of x.
+So how might we solve the problem we saw with polynomial regression?  One way would be to divide the data into chunks at various points (knots), and fit a linear regression or polynomial model within that subset of data.  The following fits a cubic polynomial for each 10 evenly divided subsets of x.
 
 ```{r piecewisePoly, echo=FALSE}
 knots = seq(0, 1, by = .1)

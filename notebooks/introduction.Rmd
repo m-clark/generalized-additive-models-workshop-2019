@@ -1,9 +1,15 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output: 
+  html_notebook: 
+    code_folding: none
+    highlight: pygments
+    theme: sandstone
 editor_options: 
   chunk_output_type: inline
 ---
+
+## Initialization
 
 ```{r misc_functions}
 source('misc_functions/functions.R')
@@ -16,11 +22,11 @@ library(modelr)
 library(mgcv)
 ```
 
+## Data
 
 The `mcycle` data regard a series of measurements of head acceleration in a simulated motorcycle accident, used to test crash helmets. The observations consist of acceleromter readings taken through time, thus there are only two variables `times`, in milliseconds after impact, and `accel`, measured in g, which can be positive or negative with 0 as a resting state.
 
 ```{r load_mcycle}
-
 data(mcycle, package = 'MASS')
 
 qplot(data=mcycle, x=times, y=accel)

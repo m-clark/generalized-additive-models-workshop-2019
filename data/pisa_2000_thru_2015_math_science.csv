@@ -1,0 +1,997 @@
+Year,Jurisdiction,Average,test
+2015,International Average (OECD Countries),490.203899758467,Math
+2015,Average of the Selected Jurisdictions,461.616930168373,Math
+2015,Australia,493.896231275835,Math
+2015,Austria,496.742273947571,Math
+2015,Belgium,506.984362377966,Math
+2015,Canada,515.647427968622,Math
+2015,Chile,422.671357892647,Math
+2015,Czech Republic,492.325438023637,Math
+2015,Denmark,511.087631834791,Math
+2015,Estonia,519.52913230814,Math
+2015,Finland,511.076852960152,Math
+2015,France,492.92040179419,Math
+2015,Germany,505.971282413447,Math
+2015,Greece,453.629850695741,Math
+2015,Hungary,476.830880844202,Math
+2015,Iceland,488.033184375679,Math
+2015,Ireland,503.721997416289,Math
+2015,Israel,469.66945406512,Math
+2015,Italy,489.728730841121,Math
+2015,Japan,532.439872216395,Math
+2015,"Korea, Republic of",524.106216349152,Math
+2015,Latvia,482.305071700274,Math
+2015,Luxembourg,485.770628161505,Math
+2015,Mexico,408.023477641997,Math
+2015,Netherlands,512.252789849464,Math
+2015,New Zealand,495.22325640525,Math
+2015,Norway,501.729814944197,Math
+2015,Poland,504.469251373938,Math
+2015,Portugal,491.626967860438,Math
+2015,Slovak Republic,475.230105289991,Math
+2015,Slovenia,509.919632114553,Math
+2015,Spain,485.843217330057,Math
+2015,Sweden,493.91812212913,Math
+2015,Switzerland,521.2505751832,Math
+2015,Turkey,420.453979471543,Math
+2015,United Kingdom,492.478530672512,Math
+2015,United States,469.628491817614,Math
+2015,Albania,413.157021070361,Math
+2015,Algeria,359.606217049405,Math
+2015,Argentina,NA,Math
+2015,Azerbaijan,NA,Math
+2015,Brazil,377.069523421222,Math
+2015,B-S-J-G (China),531.296133018898,Math
+2015,Buenos Aires - Argentina,456.295589371338,Math
+2015,Bulgaria,441.189919352615,Math
+2015,Chinese Taipei,542.321466737274,Math
+2015,Colombia,389.643827849568,Math
+2015,Costa Rica,400.25337289934,Math
+2015,Croatia,464.040099247348,Math
+2015,Cyprus,437.128523551686,Math
+2015,Dominican Republic,327.702025194469,Math
+2015,Dubai-United Arab Emirates,NA,Math
+2015,Georgia,403.833229454303,Math
+2015,Hong Kong - China,547.931049423792,Math
+2015,Indonesia,386.10959153229,Math
+2015,Jordan,380.259010417183,Math
+2015,Kazakhstan,NA,Math
+2015,Kosovo,361.53398062755,Math
+2015,Kyrgyz Republic,NA,Math
+2015,Lebanon,396.249652539543,Math
+2015,Liechtenstein,NA,Math
+2015,Lithuania,478.383381816247,Math
+2015,Macao - China,543.807775689021,Math
+2015,"Macedonia, Republic of",371.311428690251,Math
+2015,Malaysia,NA,Math
+2015,Malta,478.644793714906,Math
+2015,"Moldova, Republic of",419.663521460392,Math
+2015,"Montenegro, Republic of",417.934124683488,Math
+2015,Panama,NA,Math
+2015,Peru,386.560588036269,Math
+2015,Qatar,402.400635014115,Math
+2015,Romania,443.954315286879,Math
+2015,Russian Federation,494.060030279362,Math
+2015,Serbia and Montenegro,NA,Math
+2015,"Serbia, Republic of",NA,Math
+2015,Shanghai - China,NA,Math
+2015,Singapore,564.189678152976,Math
+2015,Thailand,415.463799897801,Math
+2015,Trinidad and Tobago,417.243395883193,Math
+2015,Tunisia,366.817985469443,Math
+2015,United Arab Emirates,427.482739051995,Math
+2015,Uruguay,417.99188294929,Math
+2015,Vietnam,494.518311405921,Math
+2012,International Average (OECD Countries),493.940745586948,Math
+2012,Average of the Selected Jurisdictions,473.282524043717,Math
+2012,Australia,504.150766269474,Math
+2012,Austria,505.540743040188,Math
+2012,Belgium,514.52924489034,Math
+2012,Canada,518.070399654099,Math
+2012,Chile,422.632355512398,Math
+2012,Czech Republic,498.957882463199,Math
+2012,Denmark,500.026756674282,Math
+2012,Estonia,520.545521584124,Math
+2012,Finland,518.750335277442,Math
+2012,France,494.984674325778,Math
+2012,Germany,513.52505569194,Math
+2012,Greece,452.973426995912,Math
+2012,Hungary,477.044454869619,Math
+2012,Iceland,492.795697508307,Math
+2012,Ireland,501.497460190702,Math
+2012,Israel,466.48143036732,Math
+2012,Italy,485.321181214056,Math
+2012,Japan,536.406918585376,Math
+2012,"Korea, Republic of",553.766658749828,Math
+2012,Latvia,490.571021834409,Math
+2012,Luxembourg,489.845097687263,Math
+2012,Mexico,413.281466598847,Math
+2012,Netherlands,522.971758176618,Math
+2012,New Zealand,499.749902881932,Math
+2012,Norway,489.373070368064,Math
+2012,Poland,517.501096738681,Math
+2012,Portugal,487.063181119208,Math
+2012,Slovak Republic,481.644743898642,Math
+2012,Slovenia,501.127422505933,Math
+2012,Spain,484.319297830375,Math
+2012,Sweden,478.260635852324,Math
+2012,Switzerland,530.931003856151,Math
+2012,Turkey,447.984415052099,Math
+2012,United Kingdom,493.934230967956,Math
+2012,United States,481.366786310301,Math
+2012,Albania,394.329333184424,Math
+2012,Algeria,NA,Math
+2012,Argentina,388.431709736779,Math
+2012,Azerbaijan,NA,Math
+2012,Brazil,388.508963269403,Math
+2012,B-S-J-G (China),NA,Math
+2012,Buenos Aires - Argentina,NA,Math
+2012,Bulgaria,438.738259668812,Math
+2012,Chinese Taipei,559.824796020719,Math
+2012,Colombia,376.48860104617,Math
+2012,Costa Rica,406.99986717469,Math
+2012,Croatia,471.131460624613,Math
+2012,Cyprus,439.696382648104,Math
+2012,Dominican Republic,NA,Math
+2012,Dubai-United Arab Emirates,NA,Math
+2012,Georgia,NA,Math
+2012,Hong Kong  China,561.241096347419,Math
+2012,Indonesia,375.114451524122,Math
+2012,Jordan,385.595556370133,Math
+2012,Kazakhstan,431.798408525889,Math
+2012,Kosovo,NA,Math
+2012,Kyrgyz Republic,NA,Math
+2012,Lebanon,NA,Math
+2012,Liechtenstein,534.965082938305,Math
+2012,Lithuania,478.823277473646,Math
+2012,Macao - China,538.13449475617,Math
+2012,"Macedonia, Republic of",NA,Math
+2012,Malaysia,420.512967518403,Math
+2012,Malta,NA,Math
+2012,"Moldova, Republic of",NA,Math
+2012,"Montenegro, Republic of",409.626613200096,Math
+2012,Panama,NA,Math
+2012,Peru,368.102546897398,Math
+2012,Qatar,376.448397830979,Math
+2012,Romania,444.554242644569,Math
+2012,Russian Federation,482.169415849644,Math
+2012,Serbia and Montenegro,NA,Math
+2012,"Serbia, Republic of",448.859130364827,Math
+2012,Shanghai - China,612.675536477381,Math
+2012,Singapore,573.468314561447,Math
+2012,Thailand,426.737491174573,Math
+2012,Trinidad and Tobago,NA,Math
+2012,Tunisia,387.824629540816,Math
+2012,United Arab Emirates,434.007164664006,Math
+2012,Uruguay,409.291567890237,Math
+2012,Vietnam,511.338207374629,Math
+2009,International Average (OECD Countries),495.318198199802,Math
+2009,Average of the Selected Jurisdictions,467.618121621989,Math
+2009,Australia,514.340462493315,Math
+2009,Austria,495.908655251925,Math
+2009,Belgium,515.272276921134,Math
+2009,Canada,526.80515277157,Math
+2009,Chile,421.060473175213,Math
+2009,Czech Republic,492.814094080371,Math
+2009,Denmark,503.278147362278,Math
+2009,Estonia,512.104197393106,Math
+2009,Finland,540.504348172301,Math
+2009,France,496.782310316207,Math
+2009,Germany,512.777642537515,Math
+2009,Greece,466.096372661163,Math
+2009,Hungary,490.170027503728,Math
+2009,Iceland,506.669163687622,Math
+2009,Ireland,487.136375135939,Math
+2009,Israel,446.863763939656,Math
+2009,Italy,482.908480395348,Math
+2009,Japan,528.993092875153,Math
+2009,"Korea, Republic of",546.228534209753,Math
+2009,Latvia,481.953822121265,Math
+2009,Luxembourg,489.067263289906,Math
+2009,Mexico,418.509094568344,Math
+2009,Netherlands,525.83568837596,Math
+2009,New Zealand,519.300872255267,Math
+2009,Norway,497.955692982933,Math
+2009,Poland,494.802918331843,Math
+2009,Portugal,486.888305911757,Math
+2009,Slovak Republic,496.683420001406,Math
+2009,Slovenia,501.472389333819,Math
+2009,Spain,483.493140177442,Math
+2009,Sweden,494.238175178004,Math
+2009,Switzerland,533.960644751785,Math
+2009,Turkey,445.451340058823,Math
+2009,United Kingdom,492.414078264908,Math
+2009,United States,487.396520506318,Math
+2009,Albania,377.461056419574,Math
+2009,Algeria,NA,Math
+2009,Argentina,388.068128331989,Math
+2009,Azerbaijan,430.975299845017,Math
+2009,Brazil,385.814111796073,Math
+2009,B-S-J-G (China),NA,Math
+2009,Buenos Aires - Argentina,NA,Math
+2009,Bulgaria,428.06614290384,Math
+2009,Chinese Taipei,543.182422746028,Math
+2009,Colombia,380.848214879185,Math
+2009,Costa Rica,NA,Math
+2009,Croatia,459.93891768794,Math
+2009,Cyprus,NA,Math
+2009,Dominican Republic,NA,Math
+2009,Dubai-United Arab Emirates,452.532685336558,Math
+2009,Georgia,NA,Math
+2009,Hong Kong - China,554.527506247141,Math
+2009,Indonesia,371.300931004917,Math
+2009,Jordan,386.663813753871,Math
+2009,Kazakhstan,404.884691917085,Math
+2009,Kosovo,NA,Math
+2009,Kyrgyz Republic,331.15550913590903,Math
+2009,Lebanon,NA,Math
+2009,Liechtenstein,536.048468696232,Math
+2009,Lithuania,476.602303064381,Math
+2009,Macao - China,525.283022896302,Math
+2009,"Macedonia, Republic of",NA,Math
+2009,Malaysia,NA,Math
+2009,Malta,NA,Math
+2009,"Moldova, Republic of",NA,Math
+2009,"Montenegro, Republic of",402.515364134253,Math
+2009,Panama,359.74815917555,Math
+2009,Peru,365.107272348555,Math
+2009,Qatar,368.112487761863,Math
+2009,Romania,427.07917579221,Math
+2009,Russian Federation,467.812209268743,Math
+2009,Serbia and Montenegro,NA,Math
+2009,"Serbia, Republic of",442.38188879746,Math
+2009,Shanghai - China,600.076266497801,Math
+2009,Singapore,562.018741039035,Math
+2009,Thailand,418.583935015112,Math
+2009,Trinidad and Tobago,414.044966353499,Math
+2009,Tunisia,371.483502869281,Math
+2009,United Arab Emirates,NA,Math
+2009,Uruguay,426.723772720805,Math
+2009,Vietnam,NA,Math
+2006,International Average (OECD Countries),493.962333172036,Math
+2006,Average of the Selected Jurisdictions,469.077559176409,Math
+2006,Australia,519.907748551867,Math
+2006,Austria,505.483598477487,Math
+2006,Belgium,520.348972896002,Math
+2006,Canada,527.00717882472,Math
+2006,Chile,411.350338565367,Math
+2006,Czech Republic,509.859358944553,Math
+2006,Denmark,513.025950193346,Math
+2006,Estonia,514.575461702332,Math
+2006,Finland,548.358395122749,Math
+2006,France,495.538332864436,Math
+2006,Germany,503.790858306251,Math
+2006,Greece,459.201986715969,Math
+2006,Hungary,490.937383003134,Math
+2006,Iceland,505.544828285265,Math
+2006,Ireland,501.471771117311,Math
+2006,Israel,441.858727752461,Math
+2006,Italy,461.688720801908,Math
+2006,Japan,523.10251518708,Math
+2006,"Korea, Republic of",547.458478815152,Math
+2006,Latvia,486.166083464506,Math
+2006,Luxembourg,490.001840360493,Math
+2006,Mexico,405.654639766968,Math
+2006,Netherlands,530.654046403508,Math
+2006,New Zealand,521.988848532371,Math
+2006,Norway,489.846353153488,Math
+2006,Poland,495.428496857271,Math
+2006,Portugal,466.160985698929,Math
+2006,Slovak Republic,492.106237906583,Math
+2006,Slovenia,504.455963817407,Math
+2006,Spain,479.957506997495,Math
+2006,Sweden,502.356398206747,Math
+2006,Switzerland,529.656147274817,Math
+2006,Turkey,423.941190323101,Math
+2006,United Kingdom,495.444158476338,Math
+2006,United States,474.35215765384,Math
+2006,Albania,NA,Math
+2006,Algeria,NA,Math
+2006,Argentina,381.253911148702,Math
+2006,Azerbaijan,475.995219850919,Math
+2006,Brazil,369.515046477085,Math
+2006,B-S-J-G (China),NA,Math
+2006,Buenos Aires - Argentina,NA,Math
+2006,Bulgaria,413.449171394559,Math
+2006,Chinese Taipei,549.357265489055,Math
+2006,Colombia,369.978513519926,Math
+2006,Costa Rica,NA,Math
+2006,Croatia,467.24671401615,Math
+2006,Cyprus,NA,Math
+2006,Dominican Republic,NA,Math
+2006,Dubai-United Arab Emirates,NA,Math
+2006,Georgia,NA,Math
+2006,Hong Kong - China,547.460679574837,Math
+2006,Indonesia,391.006808080867,Math
+2006,Jordan,384.036052036306,Math
+2006,Kazakhstan,NA,Math
+2006,Kosovo,NA,Math
+2006,Kyrgyz Republic,310.583831838199,Math
+2006,Lebanon,NA,Math
+2006,Liechtenstein,524.967426224896,Math
+2006,Lithuania,486.421334787376,Math
+2006,Macao - China,525.002509286714,Math
+2006,"Macedonia, Republic of",NA,Math
+2006,Malaysia,NA,Math
+2006,Malta,NA,Math
+2006,"Moldova, Republic of",NA,Math
+2006,"Montenegro, Republic of",399.307688537886,Math
+2006,Panama,NA,Math
+2006,Peru,NA,Math
+2006,Qatar,317.955652286622,Math
+2006,Romania,414.7959504538,Math
+2006,Russian Federation,475.679075148295,Math
+2006,Serbia and Montenegro,NA,Math
+2006,"Serbia, Republic of",435.375332255252,Math
+2006,Shanghai - China,NA,Math
+2006,Singapore,NA,Math
+2006,Thailand,417.072614011731,Math
+2006,Trinidad and Tobago,NA,Math
+2006,Tunisia,365.479374822148,Math
+2006,United Arab Emirates,NA,Math
+2006,Uruguay,426.799040792705,Math
+2006,Vietnam,NA,Math
+2003,International Average (OECD Countries),499.170373010546,Math
+2003,Average of the Selected Jurisdictions,485.198093928753,Math
+2003,Australia,524.266004324964,Math
+2003,Austria,505.610983619778,Math
+2003,Belgium,529.286414629863,Math
+2003,Canada,532.486736197024,Math
+2003,Chile,NA,Math
+2003,Czech Republic,516.455000745028,Math
+2003,Denmark,514.287675108569,Math
+2003,Estonia,NA,Math
+2003,Finland,544.289187006198,Math
+2003,France,510.799473485927,Math
+2003,Germany,502.985532699418,Math
+2003,Greece,444.911862704937,Math
+2003,Hungary,490.012392234689,Math
+2003,Iceland,515.108650286554,Math
+2003,Ireland,502.837319707831,Math
+2003,Israel,NA,Math
+2003,Italy,465.66421007198,Math
+2003,Japan,534.136501636472,Math
+2003,"Korea, Republic of",542.227369643416,Math
+2003,Latvia,483.374948830849,Math
+2003,Luxembourg,493.208556588694,Math
+2003,Mexico,385.218339344223,Math
+2003,Netherlands,537.82327629883,Math
+2003,New Zealand,523.486584874737,Math
+2003,Norway,495.185390278491,Math
+2003,Poland,490.238776169126,Math
+2003,Portugal,466.016694548823,Math
+2003,Slovak Republic,498.183456013749,Math
+2003,Slovenia,NA,Math
+2003,Spain,485.108056486922,Math
+2003,Sweden,509.046449064095,Math
+2003,Switzerland,526.55314814434,Math
+2003,Turkey,423.41941009499,Math
+2003,United Kingdom,NA,Math
+2003,United States,482.882789475851,Math
+2003,Albania,NA,Math
+2003,Algeria,NA,Math
+2003,Argentina,NA,Math
+2003,Azerbaijan,NA,Math
+2003,Brazil,356.015791087644,Math
+2003,B-S-J-G (China),NA,Math
+2003,Buenos Aires - Argentina,NA,Math
+2003,Bulgaria,NA,Math
+2003,Chinese Taipei,NA,Math
+2003,Colombia,NA,Math
+2003,Costa Rica,NA,Math
+2003,Croatia,NA,Math
+2003,Cyprus,NA,Math
+2003,Dominican Republic,NA,Math
+2003,Dubai-United Arab Emirates,NA,Math
+2003,Georgia,NA,Math
+2003,Hong Kong - China,550.383240588331,Math
+2003,Indonesia,360.158832165328,Math
+2003,Jordan,NA,Math
+2003,Kazakhstan,NA,Math
+2003,Kosovo,NA,Math
+2003,Kyrgyz Republic,NA,Math
+2003,Lebanon,NA,Math
+2003,Liechtenstein,535.795421903707,Math
+2003,Lithuania,NA,Math
+2003,Macao - China,527.270281499519,Math
+2003,"Macedonia, Republic of",NA,Math
+2003,Malaysia,NA,Math
+2003,Malta,NA,Math
+2003,"Moldova, Republic of",NA,Math
+2003,"Montenegro, Republic of",NA,Math
+2003,Panama,NA,Math
+2003,Peru,NA,Math
+2003,Qatar,NA,Math
+2003,Romania,NA,Math
+2003,Russian Federation,468.406654023418,Math
+2003,Serbia and Montenegro,436.871283394169,Math
+2003,"Serbia, Republic of",NA,Math
+2003,Shanghai - China,NA,Math
+2003,Singapore,NA,Math
+2003,Thailand,416.977960429349,Math
+2003,Trinidad and Tobago,NA,Math
+2003,Tunisia,358.73322220757,Math
+2003,United Arab Emirates,NA,Math
+2003,Uruguay,422.199879534705,Math
+2003,Vietnam,NA,Math
+2000,International Average (OECD Countries),NA,Math
+2000,Average of the Selected Jurisdictions,NA,Math
+2000,Australia,NA,Math
+2000,Austria,NA,Math
+2000,Belgium,NA,Math
+2000,Canada,NA,Math
+2000,Chile,NA,Math
+2000,Czech Republic,NA,Math
+2000,Denmark,NA,Math
+2000,Estonia,NA,Math
+2000,Finland,NA,Math
+2000,France,NA,Math
+2000,Germany,NA,Math
+2000,Greece,NA,Math
+2000,Hungary,NA,Math
+2000,Iceland,NA,Math
+2000,Ireland,NA,Math
+2000,Israel,NA,Math
+2000,Italy,NA,Math
+2000,Japan,NA,Math
+2000,"Korea, Republic of",NA,Math
+2000,Latvia,NA,Math
+2000,Luxembourg,NA,Math
+2000,Mexico,NA,Math
+2000,Netherlands,NA,Math
+2000,New Zealand,NA,Math
+2000,Norway,NA,Math
+2000,Poland,NA,Math
+2000,Portugal,NA,Math
+2000,Slovak Republic,NA,Math
+2000,Slovenia,NA,Math
+2000,Spain,NA,Math
+2000,Sweden,NA,Math
+2000,Switzerland,NA,Math
+2000,Turkey,NA,Math
+2000,United Kingdom,NA,Math
+2000,United States,NA,Math
+2000,Albania,NA,Math
+2000,Algeria,NA,Math
+2000,Argentina,NA,Math
+2000,Azerbaijan,NA,Math
+2000,Brazil,NA,Math
+2000,B-S-J-G (China),NA,Math
+2000,Buenos Aires - Argentina,NA,Math
+2000,Bulgaria,NA,Math
+2000,Chinese Taipei,NA,Math
+2000,Colombia,NA,Math
+2000,Costa Rica,NA,Math
+2000,Croatia,NA,Math
+2000,Cyprus,NA,Math
+2000,Dominican Republic,NA,Math
+2000,Dubai-United Arab Emirates,NA,Math
+2000,Georgia,NA,Math
+2000,Hong Kong - China,NA,Math
+2000,Indonesia,NA,Math
+2000,Jordan,NA,Math
+2000,Kazakhstan,NA,Math
+2000,Kosovo,NA,Math
+2000,Kyrgyz Republic,NA,Math
+2000,Lebanon,NA,Math
+2000,Liechtenstein,NA,Math
+2000,Lithuania,NA,Math
+2000,Macao - China,NA,Math
+2000,"Macedonia, Republic of",NA,Math
+2000,Malaysia,NA,Math
+2000,Malta,NA,Math
+2000,"Moldova, Republic of",NA,Math
+2000,"Montenegro, Republic of",NA,Math
+2000,Panama,NA,Math
+2000,Peru,NA,Math
+2000,Qatar,NA,Math
+2000,Romania,NA,Math
+2000,Russian Federation,NA,Math
+2000,Serbia and Montenegro,NA,Math
+2000,"Serbia, Republic of",NA,Math
+2000,Shanghai - China,NA,Math
+2000,Singapore,NA,Math
+2000,Thailand,NA,Math
+2000,Trinidad and Tobago,NA,Math
+2000,Tunisia,NA,Math
+2000,United Arab Emirates,NA,Math
+2000,Uruguay,NA,Math
+2000,Vietnam,NA,Math
+2015,International Average (OECD Countries),493.201712887358,Science
+2015,Average of the Selected Jurisdictions,466.214798084653,Science
+2015,Australia,509.993854209251,Science
+2015,Austria,495.037486379706,Science
+2015,Belgium,501.999713681166,Science
+2015,Canada,527.704684182833,Science
+2015,Chile,446.956066364174,Science
+2015,Czech Republic,492.830048328694,Science
+2015,Denmark,501.936886977413,Science
+2015,Estonia,534.193742077203,Science
+2015,Finland,530.661158860946,Science
+2015,France,494.977600372005,Science
+2015,Germany,509.14064717478,Science
+2015,Greece,454.828816594835,Science
+2015,Hungary,476.747512404287,Science
+2015,Iceland,473.230086197332,Science
+2015,Ireland,502.575115488822,Science
+2015,Israel,466.55281218923,Science
+2015,Italy,480.546762410819,Science
+2015,Japan,538.394751054492,Science
+2015,"Korea, Republic of",515.809911526951,Science
+2015,Latvia,490.22501836099,Science
+2015,Luxembourg,482.806383601509,Science
+2015,Mexico,415.709882908356,Science
+2015,Netherlands,508.574806071928,Science
+2015,New Zealand,513.303512225244,Science
+2015,Norway,498.481109086114,Science
+2015,Poland,501.43533182058,Science
+2015,Portugal,501.100062233805,Science
+2015,Slovak Republic,460.774855826437,Science
+2015,Slovenia,512.863578600409,Science
+2015,Spain,492.786136115007,Science
+2015,Sweden,493.42235622744,Science
+2015,Switzerland,505.505815533037,Science
+2015,Turkey,425.489508864937,Science
+2015,United Kingdom,509.221502941919,Science
+2015,United States,496.242434164887,Science
+2015,Albania,427.224982731528,Science
+2015,Algeria,375.745102082318,Science
+2015,Argentina,NA,Science
+2015,Azerbaijan,NA,Science
+2015,Brazil,400.682103068384,Science
+2015,B-S-J-G (China),517.779281114996,Science
+2015,Buenos Aires - Argentina,475.186598190678,Science
+2015,Bulgaria,445.771957916846,Science
+2015,Chinese Taipei,532.347454418556,Science
+2015,Colombia,415.728760576794,Science
+2015,Costa Rica,419.608033064258,Science
+2015,Croatia,475.391176687498,Science
+2015,Cyprus,432.576765603434,Science
+2015,Dominican Republic,331.638827213739,Science
+2015,Dubai-United Arab Emirates,NA,Science
+2015,Georgia,411.131523912363,Science
+2015,Hong Kong - China,523.277447763458,Science
+2015,Indonesia,403.09974538369,Science
+2015,Jordan,408.669113259624,Science
+2015,Kazakhstan,NA,Science
+2015,Kosovo,378.442185110296,Science
+2015,Kyrgyz Republic,NA,Science
+2015,Lebanon,386.485372317364,Science
+2015,Liechtenstein,NA,Science
+2015,Lithuania,475.408946495768,Science
+2015,Macao - China,528.549600196604,Science
+2015,"Macedonia, Republic of",383.682387562563,Science
+2015,Malaysia,NA,Science
+2015,Malta,464.781964680804,Science
+2015,"Moldova, Republic of",427.997805693843,Science
+2015,"Montenegro, Republic of",411.313648204872,Science
+2015,Panama,NA,Science
+2015,Peru,396.683648469985,Science
+2015,Qatar,417.61112992733,Science
+2015,Romania,434.88486177709,Science
+2015,Russian Federation,486.631040952501,Science
+2015,Serbia and Montenegro,NA,Science
+2015,"Serbia, Republic of",NA,Science
+2015,Shanghai - China,NA,Science
+2015,Singapore,555.574679598885,Science
+2015,Thailand,421.337325952353,Science
+2015,Trinidad and Tobago,424.59045455802,Science
+2015,Tunisia,386.403366649708,Science
+2015,United Arab Emirates,436.73114798194,Science
+2015,Uruguay,435.362956251627,Science
+2015,Vietnam,524.644519498469,Science
+2012,International Average (OECD Countries),501.171706238185,Science
+2012,Average of the Selected Jurisdictions,478.567511981067,Science
+2012,Australia,521.494747179522,Science
+2012,Austria,505.781247861711,Science
+2012,Belgium,504.867654138898,Science
+2012,Canada,525.441293246964,Science
+2012,Chile,444.933920734436,Science
+2012,Czech Republic,508.299080849578,Science
+2012,Denmark,498.474202800223,Science
+2012,Estonia,541.404757538085,Science
+2012,Finland,545.441941092923,Science
+2012,France,498.970895241648,Science
+2012,Germany,524.120800352849,Science
+2012,Greece,466.722030142801,Science
+2012,Hungary,494.302352112894,Science
+2012,Iceland,478.154597391297,Science
+2012,Ireland,522.003960268129,Science
+2012,Israel,470.072662819587,Science
+2012,Italy,493.541482893961,Science
+2012,Japan,546.735600624006,Science
+2012,"Korea, Republic of",537.787622925751,Science
+2012,Latvia,502.186193644918,Science
+2012,Luxembourg,491.21517621529,Science
+2012,Mexico,414.920147876455,Science
+2012,Netherlands,522.055822811447,Science
+2012,New Zealand,515.636319342748,Science
+2012,Norway,494.523935493638,Science
+2012,Poland,525.816446818785,Science
+2012,Portugal,489.274732961554,Science
+2012,Slovak Republic,471.193177820336,Science
+2012,Slovenia,514.142556003126,Science
+2012,Spain,496.445823971494,Science
+2012,Sweden,484.798966599085,Science
+2012,Switzerland,515.297524406741,Science
+2012,Turkey,463.412909825288,Science
+2012,United Kingdom,514.12932195947,Science
+2012,United States,497.409812370845,Science
+2012,Albania,397.373213588442,Science
+2012,Algeria,NA,Science
+2012,Argentina,405.632005164596,Science
+2012,Azerbaijan,NA,Science
+2012,Brazil,401.619684958651,Science
+2012,B-S-J-G (China),NA,Science
+2012,Buenos Aires - Argentina,NA,Science
+2012,Bulgaria,446.468710132905,Science
+2012,Chinese Taipei,523.314905764246,Science
+2012,Colombia,398.678631633915,Science
+2012,Costa Rica,429.350967794937,Science
+2012,Croatia,491.356583913561,Science
+2012,Cyprus,437.676459943894,Science
+2012,Dominican Republic,NA,Science
+2012,Dubai-United Arab Emirates,NA,Science
+2012,Georgia,NA,Science
+2012,Hong Kong - China,554.937435651953,Science
+2012,Indonesia,381.911484476433,Science
+2012,Jordan,409.367214687925,Science
+2012,Kazakhstan,424.707523321618,Science
+2012,Kosovo,NA,Science
+2012,Kyrgyz Republic,NA,Science
+2012,Lebanon,NA,Science
+2012,Liechtenstein,524.694993453296,Science
+2012,Lithuania,495.700087663183,Science
+2012,Macao - China,520.570876903928,Science
+2012,"Macedonia, Republic of",NA,Science
+2012,Malaysia,419.502648551001,Science
+2012,Malta,NA,Science
+2012,"Moldova, Republic of",NA,Science
+2012,"Montenegro, Republic of",410.097602389958,Science
+2012,Panama,NA,Science
+2012,Peru,373.113448089587,Science
+2012,Qatar,383.642552433473,Science
+2012,Romania,438.768057018932,Science
+2012,Russian Federation,486.295491055597,Science
+2012,Serbia and Montenegro,NA,Science
+2012,"Serbia, Republic of",444.80411192816,Science
+2012,Shanghai - China,580.117831288587,Science
+2012,Singapore,551.493157568047,Science
+2012,Thailand,443.999935131877,Science
+2012,Trinidad and Tobago,NA,Science
+2012,Tunisia,398.046450908057,Science
+2012,United Arab Emirates,448.370296939891,Science
+2012,Uruguay,415.842936126206,Science
+2012,Vietnam,528.423261950012,Science
+2009,International Average (OECD Countries),500.644999346893,Science
+2009,Average of the Selected Jurisdictions,471.710943565651,Science
+2009,Australia,527.270533936847,Science
+2009,Austria,494.327673154439,Science
+2009,Belgium,506.575526139358,Science
+2009,Canada,528.704952999302,Science
+2009,Chile,447.467360176419,Science
+2009,Czech Republic,500.497065941677,Science
+2009,Denmark,499.336974687075,Science
+2009,Estonia,527.83175605918,Science
+2009,Finland,554.079509782423,Science
+2009,France,498.226893935058,Science
+2009,Germany,520.405349535201,Science
+2009,Greece,470.115764233977,Science
+2009,Hungary,502.642748252152,Science
+2009,Iceland,495.598498613644,Science
+2009,Ireland,507.984153789135,Science
+2009,Israel,454.85096320008,Science
+2009,Italy,488.83136268583,Science
+2009,Japan,539.430993408373,Science
+2009,"Korea, Republic of",537.986230069057,Science
+2009,Latvia,493.878923904221,Science
+2009,Luxembourg,483.9284208448,Science
+2009,Mexico,415.908672241096,Science
+2009,Netherlands,522.218128302406,Science
+2009,New Zealand,532.006901225863,Science
+2009,Norway,499.875699836175,Science
+2009,Poland,508.068297201966,Science
+2009,Portugal,492.949967315629,Science
+2009,Slovak Republic,490.26592193522,Science
+2009,Slovenia,511.759473097305,Science
+2009,Spain,488.254630231258,Science
+2009,Sweden,495.105897711928,Science
+2009,Switzerland,516.567510121675,Science
+2009,Turkey,453.909718095559,Science
+2009,United Kingdom,513.710239932962,Science
+2009,United States,502.002264543982,Science
+2009,Albania,390.69574552442,Science
+2009,Algeria,NA,Science
+2009,Argentina,400.838520243204,Science
+2009,Azerbaijan,373.183588127399,Science
+2009,Brazil,405.403988680879,Science
+2009,B-S-J-G (China),NA,Science
+2009,Buenos Aires - Argentina,NA,Science
+2009,Bulgaria,439.294148812207,Science
+2009,Chinese Taipei,520.419792379168,Science
+2009,Colombia,401.750115046621,Science
+2009,Costa Rica,NA,Science
+2009,Croatia,486.363448475428,Science
+2009,Cyprus,NA,Science
+2009,Dominican Republic,NA,Science
+2009,Dubai-United Arab Emirates,466.471293071126,Science
+2009,Georgia,NA,Science
+2009,Hong Kong - China,549.028706594867,Science
+2009,Indonesia,382.569451697687,Science
+2009,Jordan,415.387783408575,Science
+2009,Kazakhstan,400.376138721168,Science
+2009,Kosovo,NA,Science
+2009,Kyrgyz Republic,329.545623152329,Science
+2009,Lebanon,NA,Science
+2009,Liechtenstein,519.914168642953,Science
+2009,Lithuania,491.409790829657,Science
+2009,Macao - China,511.069597719773,Science
+2009,"Macedonia, Republic of",NA,Science
+2009,Malaysia,NA,Science
+2009,Malta,NA,Science
+2009,"Moldova, Republic of",NA,Science
+2009,"Montenegro, Republic of",401.277470042536,Science
+2009,Panama,375.895557948866,Science
+2009,Peru,369.351771460774,Science
+2009,Qatar,379.446948928397,Science
+2009,Romania,428.178884938269,Science
+2009,Russian Federation,478.297529954917,Science
+2009,Serbia and Montenegro,NA,Science
+2009,"Serbia, Republic of",442.78578702391,Science
+2009,Shanghai - China,574.617349230508,Science
+2009,Singapore,541.695517866282,Science
+2009,Thailand,425.296284905111,Science
+2009,Trinidad and Tobago,410.195617344221,Science
+2009,Tunisia,400.661484077115,Science
+2009,United Arab Emirates,NA,Science
+2009,Uruguay,427.214249777703,Science
+2009,Vietnam,NA,Science
+2006,International Average (OECD Countries),498.051056458192,Science
+2006,Average of the Selected Jurisdictions,473.21741068227,Science
+2006,Australia,526.879589046866,Science
+2006,Austria,510.837154518225,Science
+2006,Belgium,510.363484146053,Science
+2006,Canada,534.469777403568,Science
+2006,Chile,438.177445076439,Science
+2006,Czech Republic,512.860745917908,Science
+2006,Denmark,495.894310154394,Science
+2006,Estonia,531.391804310835,Science
+2006,Finland,563.322834538274,Science
+2006,France,495.219838991881,Science
+2006,Germany,515.649129875639,Science
+2006,Greece,473.377963976493,Science
+2006,Hungary,503.931728969483,Science
+2006,Iceland,490.793774451156,Science
+2006,Ireland,508.328929943436,Science
+2006,Israel,453.903708086112,Science
+2006,Italy,475.397220549359,Science
+2006,Japan,531.388509051812,Science
+2006,"Korea, Republic of",522.148141334817,Science
+2006,Latvia,489.543778170624,Science
+2006,Luxembourg,486.324362966306,Science
+2006,Mexico,409.651951634376,Science
+2006,Netherlands,524.861506294011,Science
+2006,New Zealand,530.384360761125,Science
+2006,Norway,486.527957477272,Science
+2006,Poland,497.806502274107,Science
+2006,Portugal,474.305889157761,Science
+2006,Slovak Republic,488.433398569752,Science
+2006,Slovenia,518.815609802139,Science
+2006,Spain,488.424522693567,Science
+2006,Sweden,503.334005926549,Science
+2006,Switzerland,511.523909485706,Science
+2006,Turkey,423.832745220533,Science
+2006,United Kingdom,514.773547941067,Science
+2006,United States,488.906837319065,Science
+2006,Albania,NA,Science
+2006,Algeria,NA,Science
+2006,Argentina,391.243901925898,Science
+2006,Azerbaijan,382.333936818442,Science
+2006,Brazil,390.331570710963,Science
+2006,B-S-J-G (China),NA,Science
+2006,Buenos Aires - Argentina,NA,Science
+2006,Bulgaria,434.079770787898,Science
+2006,Chinese Taipei,532.473546626481,Science
+2006,Colombia,388.038271758836,Science
+2006,Costa Rica,NA,Science
+2006,Croatia,493.204392135972,Science
+2006,Cyprus,NA,Science
+2006,Dominican Republic,NA,Science
+2006,Dubai-United Arab Emirates,NA,Science
+2006,Georgia,NA,Science
+2006,Hong Kong - China,542.211387715861,Science
+2006,Indonesia,393.481018070464,Science
+2006,Jordan,421.971824952518,Science
+2006,Kazakhstan,NA,Science
+2006,Kosovo,NA,Science
+2006,Kyrgyz Republic,322.031581370917,Science
+2006,Lebanon,NA,Science
+2006,Liechtenstein,522.16103228881,Science
+2006,Lithuania,487.956698255006,Science
+2006,Macao - China,510.839722893818,Science
+2006,"Macedonia, Republic of",NA,Science
+2006,Malaysia,NA,Science
+2006,Malta,NA,Science
+2006,"Moldova, Republic of",NA,Science
+2006,"Montenegro, Republic of",411.788428367035,Science
+2006,Panama,NA,Science
+2006,Peru,NA,Science
+2006,Qatar,349.313145150094,Science
+2006,Romania,418.38637263597,Science
+2006,Russian Federation,479.470417318914,Science
+2006,Serbia and Montenegro,NA,Science
+2006,"Serbia, Republic of",435.636344715702,Science
+2006,Shanghai - China,NA,Science
+2006,Singapore,NA,Science
+2006,Thailand,421.011469357545,Science
+2006,Trinidad and Tobago,NA,Science
+2006,Tunisia,385.506713953447,Science
+2006,United Arab Emirates,NA,Science
+2006,Uruguay,428.133885042077,Science
+2006,Vietnam,NA,Science
+2003,International Average (OECD Countries),NA,Science
+2003,Average of the Selected Jurisdictions,NA,Science
+2003,Australia,NA,Science
+2003,Austria,NA,Science
+2003,Belgium,NA,Science
+2003,Canada,NA,Science
+2003,Chile,NA,Science
+2003,Czech Republic,NA,Science
+2003,Denmark,NA,Science
+2003,Estonia,NA,Science
+2003,Finland,NA,Science
+2003,France,NA,Science
+2003,Germany,NA,Science
+2003,Greece,NA,Science
+2003,Hungary,NA,Science
+2003,Iceland,NA,Science
+2003,Ireland,NA,Science
+2003,Israel,NA,Science
+2003,Italy,NA,Science
+2003,Japan,NA,Science
+2003,"Korea, Republic of",NA,Science
+2003,Latvia,NA,Science
+2003,Luxembourg,NA,Science
+2003,Mexico,NA,Science
+2003,Netherlands,NA,Science
+2003,New Zealand,NA,Science
+2003,Norway,NA,Science
+2003,Poland,NA,Science
+2003,Portugal,NA,Science
+2003,Slovak Republic,NA,Science
+2003,Slovenia,NA,Science
+2003,Spain,NA,Science
+2003,Sweden,NA,Science
+2003,Switzerland,NA,Science
+2003,Turkey,NA,Science
+2003,United Kingdom,NA,Science
+2003,United States,NA,Science
+2003,Albania,NA,Science
+2003,Algeria,NA,Science
+2003,Argentina,NA,Science
+2003,Azerbaijan,NA,Science
+2003,Brazil,NA,Science
+2003,B-S-J-G (China),NA,Science
+2003,Buenos Aires - Argentina,NA,Science
+2003,Bulgaria,NA,Science
+2003,Chinese Taipei,NA,Science
+2003,Colombia,NA,Science
+2003,Costa Rica,NA,Science
+2003,Croatia,NA,Science
+2003,Cyprus,NA,Science
+2003,Dominican Republic,NA,Science
+2003,Dubai-United Arab Emirates,NA,Science
+2003,Georgia,NA,Science
+2003,Hong Kong - China,NA,Science
+2003,Indonesia,NA,Science
+2003,Jordan,NA,Science
+2003,Kazakhstan,NA,Science
+2003,Kosovo,NA,Science
+2003,Kyrgyz Republic,NA,Science
+2003,Lebanon,NA,Science
+2003,Liechtenstein,NA,Science
+2003,Lithuania,NA,Science
+2003,Macao - China,NA,Science
+2003,"Macedonia, Republic of",NA,Science
+2003,Malaysia,NA,Science
+2003,Malta,NA,Science
+2003,"Moldova, Republic of",NA,Science
+2003,"Montenegro, Republic of",NA,Science
+2003,Panama,NA,Science
+2003,Peru,NA,Science
+2003,Qatar,NA,Science
+2003,Romania,NA,Science
+2003,Russian Federation,NA,Science
+2003,Serbia and Montenegro,NA,Science
+2003,"Serbia, Republic of",NA,Science
+2003,Shanghai - China,NA,Science
+2003,Singapore,NA,Science
+2003,Thailand,NA,Science
+2003,Trinidad and Tobago,NA,Science
+2003,Tunisia,NA,Science
+2003,United Arab Emirates,NA,Science
+2003,Uruguay,NA,Science
+2003,Vietnam,NA,Science
+2000,International Average (OECD Countries),NA,Science
+2000,Average of the Selected Jurisdictions,NA,Science
+2000,Australia,NA,Science
+2000,Austria,NA,Science
+2000,Belgium,NA,Science
+2000,Canada,NA,Science
+2000,Chile,NA,Science
+2000,Czech Republic,NA,Science
+2000,Denmark,NA,Science
+2000,Estonia,NA,Science
+2000,Finland,NA,Science
+2000,France,NA,Science
+2000,Germany,NA,Science
+2000,Greece,NA,Science
+2000,Hungary,NA,Science
+2000,Iceland,NA,Science
+2000,Ireland,NA,Science
+2000,Israel,NA,Science
+2000,Italy,NA,Science
+2000,Japan,NA,Science
+2000,"Korea, Republic of",NA,Science
+2000,Latvia,NA,Science
+2000,Luxembourg,NA,Science
+2000,Mexico,NA,Science
+2000,Netherlands,NA,Science
+2000,New Zealand,NA,Science
+2000,Norway,NA,Science
+2000,Poland,NA,Science
+2000,Portugal,NA,Science
+2000,Slovak Republic,NA,Science
+2000,Slovenia,NA,Science
+2000,Spain,NA,Science
+2000,Sweden,NA,Science
+2000,Switzerland,NA,Science
+2000,Turkey,NA,Science
+2000,United Kingdom,NA,Science
+2000,United States,NA,Science
+2000,Albania,NA,Science
+2000,Algeria,NA,Science
+2000,Argentina,NA,Science
+2000,Azerbaijan,NA,Science
+2000,Brazil,NA,Science
+2000,B-S-J-G (China),NA,Science
+2000,Buenos Aires - Argentina,NA,Science
+2000,Bulgaria,NA,Science
+2000,Chinese Taipei,NA,Science
+2000,Colombia,NA,Science
+2000,Costa Rica,NA,Science
+2000,Croatia,NA,Science
+2000,Cyprus,NA,Science
+2000,Dominican Republic,NA,Science
+2000,Dubai-United Arab Emirates,NA,Science
+2000,Georgia,NA,Science
+2000,Hong Kong - China,NA,Science
+2000,Indonesia,NA,Science
+2000,Jordan,NA,Science
+2000,Kazakhstan,NA,Science
+2000,Kosovo,NA,Science
+2000,Kyrgyz Republic,NA,Science
+2000,Lebanon,NA,Science
+2000,Liechtenstein,NA,Science
+2000,Lithuania,NA,Science
+2000,Macao - China,NA,Science
+2000,"Macedonia, Republic of",NA,Science
+2000,Malaysia,NA,Science
+2000,Malta,NA,Science
+2000,"Moldova, Republic of",NA,Science
+2000,"Montenegro, Republic of",NA,Science
+2000,Panama,NA,Science
+2000,Peru,NA,Science
+2000,Qatar,NA,Science
+2000,Romania,NA,Science
+2000,Russian Federation,NA,Science
+2000,Serbia and Montenegro,NA,Science
+2000,"Serbia, Republic of",NA,Science
+2000,Shanghai - China,NA,Science
+2000,Singapore,NA,Science
+2000,Thailand,NA,Science
+2000,Trinidad and Tobago,NA,Science
+2000,Tunisia,NA,Science
+2000,United Arab Emirates,NA,Science
+2000,Uruguay,NA,Science
+2000,Vietnam,NA,Science

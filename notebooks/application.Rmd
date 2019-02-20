@@ -1,9 +1,15 @@
 ---
 title: "Application"
-output: html_notebook
+output: 
+  html_notebook: 
+    code_folding: none
+    highlight: pygments
+    theme: sandstone
 editor_options: 
   chunk_output_type: inline
 ---
+
+## Initialization
 
 ```{r misc_functions}
 source('misc_functions/functions.R')
@@ -15,6 +21,8 @@ library(plotly)
 library(modelr)
 library(mgcv)
 ```
+
+## Data
 
 The data set has been constructed using average Science scores by country from the Programme for International Student Assessment (PISA) 2006, along with GNI per capita (Purchasing Power Parity, 2005 dollars), Educational Index, Health Index, and Human Development Index from UN data. The key variables are as follows:
 
@@ -130,8 +138,11 @@ anova(mod_lm, mod_gam1, test="Chisq")
 
 ## Multiple Predictors
 
+We'll now make the model more interesting by adding additional predictors.  Let's add Health and Education.
 
 ### Linear FIt
+
+We'll start with a standard linear regression model as we did before.
 
 ```{r mod_lm2}
 mod_lm2 <- gam(Overall ~ Income + Edu + Health, data=pisa)
@@ -139,6 +150,8 @@ summary(mod_lm2)
 ```
 
 ### GAM
+
+Now for the GAM.
 
 ```{r mod_gam2}
 mod_gam2 <- gam(Overall ~ s(Income) + s(Edu) + s(Health), data=pisa)
@@ -148,7 +161,7 @@ summary(mod_gam2)
 We can see the fit appears to be better.  In addition, as the effective degrees of freedom is 1 for Health, it is essentially a linear fit, so if desired, we can leave it among the `parametric` terms.
 
 ```{r mod_gam2_plot}
-# plot(mod_gam2)
+# plot(mod_gam2)  # base mgcv plot
 
 library(patchwork) # devtools::install_github("thomasp85/patchwork")
 
@@ -177,21 +190,34 @@ g3 =
 
 ### 2D Smooths
 
+We can look at interactions of variable effects just as we would with other models.  Using a smooth interaction will allow for interactions of two predictors.  
+
 ```{r mod_gam3}
 mod_gam3 <- gam(Overall ~ Health + te(Income, Edu), data=pisa)
 summary(mod_gam3)
 ```
 
+We need a special approach for visualization. Typically a heatmap/contour plot works best, or a 3d approach.
 
-```{r mod_gam3_plot}
-# requires the visibly package, otherwise see the main document; 
+```{r mod_gam3_plot, warning=FALSE}
+# use vis.gam from mgcv
+vis.gam(mod_gam3, view = c('Income', 'Edu'), theta = 90, phi = 10)
+vis.gam(mod_gam3, view = c('Income', 'Edu'), plot.type = 'contour')
+
+# You can use my personal package for an interactive 3d plot
 # devtools::install_github("m-clark/visibly")
-visibly::plot_gam_3d(model = mod_gam3, main_var = Income, second_var = Edu, palette='bilbao', direction = 1)
+# visibly::plot_gam_3d(model = mod_gam3, main_var = Income, second_var = Edu, palette='bilbao', direction = 1)
 ```
 
+In other cases, we might want a categorical variable involved, and this will, be demonstrated later, 
+
+
 ### Model Comparison
+
+We can use our typical model comparison approach.  The GAM is once again to be preferred despite the additional complexity.
 
 ```{r model_comparison_redux}
 AIC(mod_lm2, mod_gam2)
 ```
+
 
